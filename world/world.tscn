@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0rlgj3n6frbj"]
+
+[ext_resource type="Script" path="res://world/world.gd" id="1_mcwio"]
+[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_wib6s"]
+[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://world/level_1.tscn" id="4_24xp8"]
+[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="5_lso1o"]
+[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="6_pvvf2"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_mcwio")
+
+[node name="FrogPlayer" parent="." instance=ExtResource("2_wib6s")]
+z_index = 1
+position = Vector2(184, 94)
+
+[node name="Level1" parent="." instance=ExtResource("4_24xp8")]
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("5_lso1o")
+default_enemy_scene = ExtResource("6_pvvf2")
