@@ -19,6 +19,7 @@ func setup(player: Node2D):
 
 	# Connect signals
 	navigation_agent.velocity_computed.connect(_on_navigation_agent_2d_velocity_computed)
+	
 
 	# Call deferred setup
 	call_deferred("actor_setup")
@@ -61,3 +62,7 @@ func _physics_process(delta: float):
 	# Set agent's velocity
 	navigation_agent.set_velocity(new_velocity)
 	navigation_agent.set_velocity_forced(new_velocity)
+
+func _on_body_entered(body: PhysicsBody2D):
+	if body == player:  # If the body is the player
+		print("Player has collided with enemy!")  # Handle collision

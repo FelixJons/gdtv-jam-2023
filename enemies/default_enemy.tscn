@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdfv1c8teivuu"]
 
-[ext_resource type="Script" path="res://enemies/test_nav_agent.gd" id="1_tduvi"]
-[ext_resource type="Texture2D" uid="uid://p1c05rc1eda6" path="res://sprites/enemy_human-Sheet.png" id="2_7o3of"]
+[ext_resource type="Script" path="res://enemies/test_nav_agent.gd" id="1_snnlv"]
+[ext_resource type="Texture2D" uid="uid://p1c05rc1eda6" path="res://sprites/enemy_human-Sheet.png" id="2_n4kcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksti5"]
 size = Vector2(23, 24)
 
 [node name="DefaultEnemy" type="CharacterBody2D" groups=["enemies"]]
-script = ExtResource("1_tduvi")
+script = ExtResource("1_snnlv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7o3of")
+texture = ExtResource("2_n4kcw")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
