@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cas4mq43vlnt7"]
 
-[ext_resource type="Texture2D" uid="uid://bg47cv3f56vxq" path="res://sprites/blocking_element_water-Sheet.png" id="2_17jbl"]
-[ext_resource type="Texture2D" uid="uid://d4c8y8a3qetxh" path="res://sprites/ground_element_grass.png" id="3_1yklu"]
+[ext_resource type="Texture2D" uid="uid://bg47cv3f56vxq" path="res://sprites/blocking_element_water-Sheet.png" id="1_qr7wp"]
+[ext_resource type="Texture2D" uid="uid://d4c8y8a3qetxh" path="res://sprites/ground_element_grass.png" id="2_mwo2s"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jepe5"]
 
@@ -351,7 +351,7 @@ texture = SubResource("CompressedTexture2D_ad4er")
 30:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jilyi"]
-texture = ExtResource("2_17jbl")
+texture = ExtResource("1_qr7wp")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 1:0/0 = 0
@@ -369,7 +369,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvakk"]
-texture = ExtResource("3_1yklu")
+texture = ExtResource("2_mwo2s")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_uaanb")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://s334ukp7rbmp"]
+
+[ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_2btyh"]
+[ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="1_t0hgr"]
+[ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue_box1.png" id="2_l2mqg"]
+
+[node name="ArcadeScene" type="Node2D"]
+script = ExtResource("1_2btyh")
+
+[node name="400x240ArcadeHallNoDucks" type="Sprite2D" parent="."]
+position = Vector2(200, 120)
+texture = ExtResource("1_t0hgr")
+
+[node name="DialogueBox1" type="Sprite2D" parent="."]
+position = Vector2(200, 272)
+texture = ExtResource("2_l2mqg")
+
+[node name="FadeInWhite" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
