@@ -1,23 +1,143 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5268qs30tppm"]
+[gd_scene load_steps=12 format=3 uid="uid://c5268qs30tppm"]
 
-[ext_resource type="Script" path="res://player/frog_player.gd" id="1_62ss7"]
-[ext_resource type="PackedScene" uid="uid://wdubw62p16x7" path="res://enemies/bullet.tscn" id="2_34f2y"]
-[ext_resource type="Texture2D" uid="uid://0ea11a3ln3q8" path="res://sprites/player_frog-Sheet-Sheet.png" id="3_og1ru"]
+[ext_resource type="Script" path="res://player/frog_player.gd" id="1_tf7gg"]
+[ext_resource type="PackedScene" uid="uid://wdubw62p16x7" path="res://enemies/bullet.tscn" id="2_6i1jh"]
+[ext_resource type="Texture2D" uid="uid://dc022le5327fp" path="res://sprites/player_walking_animation.png" id="3_vf48n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h618r"]
 size = Vector2(16, 16)
 
+[sub_resource type="Animation" id="Animation_n67ae"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_51qgb"]
+resource_name = "walkDown"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(4, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f1sms"]
+resource_name = "walkLeft"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1xirn"]
+resource_name = "walkRight"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y43k0"]
+resource_name = "walkUp"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(6, 0), Vector2i(7, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4t78f"]
+resource_name = "walkStill"
+length = 0.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(10, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwn5o"]
+_data = {
+"RESET": SubResource("Animation_n67ae"),
+"walkDown": SubResource("Animation_51qgb"),
+"walkLeft": SubResource("Animation_f1sms"),
+"walkRight": SubResource("Animation_1xirn"),
+"walkStill": SubResource("Animation_4t78f"),
+"walkUp": SubResource("Animation_y43k0")
+}
+
 [node name="FrogPlayer" type="CharacterBody2D"]
-script = ExtResource("1_62ss7")
-bullet_scene = ExtResource("2_34f2y")
+script = ExtResource("1_tf7gg")
+bullet_scene = ExtResource("2_6i1jh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_og1ru")
-hframes = 4
-frame = 2
+texture = ExtResource("3_vf48n")
+hframes = 12
+frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_h618r")
 
 [node name="GunCooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pwn5o")
+}

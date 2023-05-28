@@ -4,6 +4,8 @@ extends CharacterBody2D
 var direction: Vector2
 @onready var screen_size = get_viewport_rect().size
 
+@onready var animations = $AnimationPlayer
+
 @export var bullet_scene : PackedScene
 @export var default_fire_rate = 0.25
 var can_fire = true
@@ -33,7 +35,21 @@ func _physics_process(delta):
 		if body.is_in_group("enemies"):
 			body.queue_free()
 			
+	updateanimation()
+
+func updateanimation() :
+	var direction
+	if velocity.length() ==0:
+		animations.stop()
+		direction = "Still"
+	else:
+		direction = "Down"
+		if velocity.x < 0: direction = "Left"
+		elif velocity.x > 0: direction = "Right"
+		elif velocity.y < 0: direction = "Up"
 	
+	animations.play("walk" + direction)
+
 func fire():
 	if not can_fire:
 		return
