@@ -1,48 +1,90 @@
-[gd_scene load_steps=9 format=3 uid="uid://s334ukp7rbmp"]
+[gd_scene load_steps=11 format=3 uid="uid://s334ukp7rbmp"]
 
-[ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_yxrtv"]
-[ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="2_317qg"]
-[ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue_box1.png" id="3_qugfl"]
-[ext_resource type="Script" path="res://arcade_hall/start_dialogue.gd" id="4_8lu6u"]
-[ext_resource type="PackedScene" uid="uid://d0rlgj3n6frbj" path="res://game/game_world.tscn" id="5_a21va"]
-[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="6_ikg5m"]
-[ext_resource type="Texture2D" uid="uid://cglaiquc7dooo" path="res://sprites/dialogue_box2.png" id="7_nfalo"]
-[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="8_dsc56"]
+[ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_bi5qh"]
+[ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="2_rp7x7"]
+[ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue_box1.png" id="3_8owf3"]
+[ext_resource type="Script" path="res://arcade_hall/start_dialogue.gd" id="4_t234w"]
+[ext_resource type="PackedScene" uid="uid://d0rlgj3n6frbj" path="res://game/game_world.tscn" id="5_xnf28"]
+[ext_resource type="FontFile" uid="uid://dvfag37de6n4k" path="res://fonts/upheavtt.ttf" id="6_6ls07"]
+[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="6_7qt7u"]
+[ext_resource type="Texture2D" uid="uid://cglaiquc7dooo" path="res://sprites/dialogue_box2.png" id="7_gyeg8"]
+[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="8_5yb4c"]
+[ext_resource type="Script" path="res://arcade_hall/rich_text_label.gd" id="10_5emuw"]
 
 [node name="ArcadeScene" type="Node2D"]
-script = ExtResource("1_yxrtv")
+script = ExtResource("1_bi5qh")
 
 [node name="400x240ArcadeHallNoDucks" type="Sprite2D" parent="."]
 position = Vector2(200, 120)
-texture = ExtResource("2_317qg")
+texture = ExtResource("2_rp7x7")
 
 [node name="Dialogue" type="Sprite2D" parent="."]
 position = Vector2(200, 272)
-texture = ExtResource("3_qugfl")
-script = ExtResource("4_8lu6u")
-game_scene = ExtResource("5_a21va")
+texture = ExtResource("3_8owf3")
+script = ExtResource("4_t234w")
+game_scene = ExtResource("5_xnf28")
 
 [node name="DialogueTextLabel" type="RichTextLabel" parent="Dialogue"]
+visible = false
 z_index = 10
 offset_left = -130.0
 offset_top = -24.0
 offset_right = 131.0
 offset_bottom = 23.0
+theme_override_fonts/normal_font = ExtResource("6_6ls07")
+theme_override_font_sizes/normal_font_size = 14
 
 [node name="FemaleDialogueBox" type="Sprite2D" parent="Dialogue"]
-texture = ExtResource("3_qugfl")
+texture = ExtResource("3_8owf3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dialogue/FemaleDialogueBox"]
 position = Vector2(-163, 0)
-texture = ExtResource("6_ikg5m")
+texture = ExtResource("6_7qt7u")
 
 [node name="MaleDialogueBox" type="Sprite2D" parent="Dialogue"]
-texture = ExtResource("7_nfalo")
+texture = ExtResource("7_gyeg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dialogue/MaleDialogueBox"]
 position = Vector2(168, 0)
-texture = ExtResource("8_dsc56")
+texture = ExtResource("8_5yb4c")
 
 [node name="FadeInWhite" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+offset_left = 78.0
+offset_top = 243.0
+offset_right = 333.0
+offset_bottom = 320.0
+vertical = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_6ls07")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[url=1]Text [/url]"
+fit_content = true
+meta_underlined = false
+script = ExtResource("10_5emuw")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_6ls07")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[url=2]Text [/url]"
+fit_content = true
+meta_underlined = false
+script = ExtResource("10_5emuw")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="BoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_6ls07")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[url=3]Text[/url]"
+fit_content = true
+meta_underlined = false
+script = ExtResource("10_5emuw")

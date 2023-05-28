@@ -1,33 +1,33 @@
 [gd_scene load_steps=11 format=3 uid="uid://d0rlgj3n6frbj"]
 
-[ext_resource type="Script" path="res://game/game_world.gd" id="1_orw28"]
-[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_trsub"]
-[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_yatki"]
-[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_5rx1a"]
-[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_lyx74"]
-[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue_box_overlay2.png" id="6_8imwl"]
-[ext_resource type="Script" path="res://game/ingame_dialogue.gd" id="7_gh1gj"]
-[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue_box_overlay1.png" id="7_h8ybn"]
-[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="8_ikws0"]
-[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="9_skcqm"]
+[ext_resource type="Script" path="res://game/game_world.gd" id="1_i0i8j"]
+[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_mjwl4"]
+[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_dd1lt"]
+[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_e0utd"]
+[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_qslwc"]
+[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue_box_overlay2.png" id="6_nc68n"]
+[ext_resource type="Script" path="res://game/ingame_dialogue.gd" id="7_tx2jj"]
+[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue_box_overlay1.png" id="8_ax2k0"]
+[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="9_fb0lb"]
+[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="10_yoees"]
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_orw28")
+script = ExtResource("1_i0i8j")
 
-[node name="FrogPlayer" parent="." instance=ExtResource("2_trsub")]
+[node name="FrogPlayer" parent="." instance=ExtResource("2_mjwl4")]
 z_index = 1
 position = Vector2(184, 94)
 
-[node name="Level1" parent="." instance=ExtResource("3_yatki")]
+[node name="Level1" parent="." instance=ExtResource("3_dd1lt")]
 
 [node name="EnemySpawner" type="Node" parent="."]
-script = ExtResource("4_5rx1a")
-default_enemy_scene = ExtResource("5_lyx74")
+script = ExtResource("4_e0utd")
+default_enemy_scene = ExtResource("5_qslwc")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
 position = Vector2(193, 351)
-texture = ExtResource("6_8imwl")
-script = ExtResource("7_gh1gj")
+texture = ExtResource("6_nc68n")
+script = ExtResource("7_tx2jj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
 z_index = 10
@@ -37,15 +37,15 @@ offset_right = 120.0
 offset_bottom = 27.0
 
 [node name="FemaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("7_h8ybn")
+texture = ExtResource("8_ax2k0")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/FemaleDialogueBox"]
 position = Vector2(-157, 0)
-texture = ExtResource("8_ikws0")
+texture = ExtResource("9_fb0lb")
 
 [node name="MaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("6_8imwl")
+texture = ExtResource("6_nc68n")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/MaleDialogueBox"]
 position = Vector2(160, 0)
-texture = ExtResource("9_skcqm")
+texture = ExtResource("10_yoees")
