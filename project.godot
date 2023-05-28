@@ -15,10 +15,6 @@ run/main_scene="res://game/world.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-
 [dialogic]
 
 animations/join_default_length=0.5
@@ -44,10 +40,6 @@ window/size/viewport_height=240
 window/size/window_width_override=1600
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
