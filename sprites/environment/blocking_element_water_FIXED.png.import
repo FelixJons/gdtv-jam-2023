@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wxpar3hl0b8f"
-path="res://.godot/imported/dialogue_box1.png-691f0591e8e8b4273769534ef4e6430d.ctex"
+uid="uid://t8sli486nfuj"
+path="res://.godot/imported/blocking_element_water_FIXED.png-1447624aa26207587c9ca9fc24b83ccc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/dialogue_box1.png"
-dest_files=["res://.godot/imported/dialogue_box1.png-691f0591e8e8b4273769534ef4e6430d.ctex"]
+source_file="res://sprites/environment/blocking_element_water_FIXED.png"
+dest_files=["res://.godot/imported/blocking_element_water_FIXED.png-1447624aa26207587c9ca9fc24b83ccc.ctex"]
 
 [params]
 

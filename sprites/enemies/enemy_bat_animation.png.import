@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg47cv3f56vxq"
-path="res://.godot/imported/blocking_element_water-Sheet.png-571a13a9f8819283686cb6d4e743c67f.ctex"
+uid="uid://we8qlcg40gch"
+path="res://.godot/imported/enemy_bat_animation.png-71868c53e3b6ef0268041e14561a3426.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/blocking_element_water-Sheet.png"
-dest_files=["res://.godot/imported/blocking_element_water-Sheet.png-571a13a9f8819283686cb6d4e743c67f.ctex"]
+source_file="res://sprites/enemies/enemy_bat_animation.png"
+dest_files=["res://.godot/imported/enemy_bat_animation.png-71868c53e3b6ef0268041e14561a3426.ctex"]
 
 [params]
 

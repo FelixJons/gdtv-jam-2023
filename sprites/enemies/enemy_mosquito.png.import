@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0k83ib72uidj"
-path="res://.godot/imported/dialogue_box_overlay2.png-b3dd2faacf47595c6af55e21860ecd7f.ctex"
+uid="uid://ckv8odx5x87ib"
+path="res://.godot/imported/enemy_mosquito.png-6382e0b949fb6a5a7aa590649e58e4b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/dialogue_box_overlay2.png"
-dest_files=["res://.godot/imported/dialogue_box_overlay2.png-b3dd2faacf47595c6af55e21860ecd7f.ctex"]
+source_file="res://sprites/enemies/enemy_mosquito.png"
+dest_files=["res://.godot/imported/enemy_mosquito.png-6382e0b949fb6a5a7aa590649e58e4b6.ctex"]
 
 [params]
 

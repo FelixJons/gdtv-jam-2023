@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4c8y8a3qetxh"
-path="res://.godot/imported/ground_element_grass.png-7c5d19ea0b39e132b7e868cf84c0e6d8.ctex"
+uid="uid://0k83ib72uidj"
+path="res://.godot/imported/dialogue_box_overlay2.png-591e31a7863a40be7789bb7ecc1ef790.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ground_element_grass.png"
-dest_files=["res://.godot/imported/ground_element_grass.png-7c5d19ea0b39e132b7e868cf84c0e6d8.ctex"]
+source_file="res://sprites/dialogue/dialogue_box_overlay2.png"
+dest_files=["res://.godot/imported/dialogue_box_overlay2.png-591e31a7863a40be7789bb7ecc1ef790.ctex"]
 
 [params]
 

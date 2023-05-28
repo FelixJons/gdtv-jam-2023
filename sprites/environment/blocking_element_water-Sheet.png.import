@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b07dsdpj5xyhf"
-path="res://.godot/imported/blocking_element_rock3.png-fb755080d3039c69345f4c1654217768.ctex"
+uid="uid://bg47cv3f56vxq"
+path="res://.godot/imported/blocking_element_water-Sheet.png-c0432fa91a5f6793f8de2488937bd75d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/blocking_element_rock3.png"
-dest_files=["res://.godot/imported/blocking_element_rock3.png-fb755080d3039c69345f4c1654217768.ctex"]
+source_file="res://sprites/environment/blocking_element_water-Sheet.png"
+dest_files=["res://.godot/imported/blocking_element_water-Sheet.png-c0432fa91a5f6793f8de2488937bd75d.ctex"]
 
 [params]
 

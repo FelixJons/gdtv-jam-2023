@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckv8odx5x87ib"
-path="res://.godot/imported/enemy_mosquito.png-e90ebd299f77186090ef94fa39e8f4fe.ctex"
+uid="uid://doyto3d510xcx"
+path="res://.godot/imported/gamer_duck_dialogue.png-f1ba15a33712901b16f118db68146d8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy_mosquito.png"
-dest_files=["res://.godot/imported/enemy_mosquito.png-e90ebd299f77186090ef94fa39e8f4fe.ctex"]
+source_file="res://sprites/dialogue/gamer_duck_dialogue.png"
+dest_files=["res://.godot/imported/gamer_duck_dialogue.png-f1ba15a33712901b16f118db68146d8c.ctex"]
 
 [params]
 

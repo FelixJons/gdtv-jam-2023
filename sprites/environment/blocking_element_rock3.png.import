@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p1c05rc1eda6"
-path="res://.godot/imported/enemy_human-Sheet.png-4303a7591cc034f20ec21e66a0ccf08b.ctex"
+uid="uid://b07dsdpj5xyhf"
+path="res://.godot/imported/blocking_element_rock3.png-8c3a91883b427d26279c29878c7457ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy_human-Sheet.png"
-dest_files=["res://.godot/imported/enemy_human-Sheet.png-4303a7591cc034f20ec21e66a0ccf08b.ctex"]
+source_file="res://sprites/environment/blocking_element_rock3.png"
+dest_files=["res://.godot/imported/blocking_element_rock3.png-8c3a91883b427d26279c29878c7457ec.ctex"]
 
 [params]
 

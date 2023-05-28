@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://we8qlcg40gch"
-path="res://.godot/imported/enemy_bat_animation.png-a6ccf03661348e9c9c5dea66215c89c6.ctex"
+uid="uid://baaykaesbk81j"
+path="res://.godot/imported/date_duck_dialogue.png-3aeff3d6416e2750dea19fa6d46160bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy_bat_animation.png"
-dest_files=["res://.godot/imported/enemy_bat_animation.png-a6ccf03661348e9c9c5dea66215c89c6.ctex"]
+source_file="res://sprites/dialogue/date_duck_dialogue.png"
+dest_files=["res://.godot/imported/date_duck_dialogue.png-3aeff3d6416e2750dea19fa6d46160bb.ctex"]
 
 [params]
 

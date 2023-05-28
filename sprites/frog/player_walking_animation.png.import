@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doyto3d510xcx"
-path="res://.godot/imported/gamer_duck_dialogue.png-9db1217f6c454c91f7745b48bfe27260.ctex"
+uid="uid://dc022le5327fp"
+path="res://.godot/imported/player_walking_animation.png-0b2a2452f997b017381f3762ba8e8402.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/gamer_duck_dialogue.png"
-dest_files=["res://.godot/imported/gamer_duck_dialogue.png-9db1217f6c454c91f7745b48bfe27260.ctex"]
+source_file="res://sprites/frog/player_walking_animation.png"
+dest_files=["res://.godot/imported/player_walking_animation.png-0b2a2452f997b017381f3762ba8e8402.ctex"]
 
 [params]
 

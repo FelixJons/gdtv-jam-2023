@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_dd1lt"]
 [ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_e0utd"]
 [ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_qslwc"]
-[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue_box_overlay2.png" id="6_nc68n"]
+[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue/dialogue_box_overlay2.png" id="6_tnfki"]
 [ext_resource type="Script" path="res://game/ingame_dialogue.gd" id="7_tx2jj"]
-[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue_box_overlay1.png" id="8_ax2k0"]
-[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="9_fb0lb"]
-[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="10_yoees"]
+[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="8_i5hnx"]
+[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="9_ph6ce"]
+[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="10_8ymm0"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_i0i8j")
@@ -25,8 +25,9 @@ script = ExtResource("4_e0utd")
 default_enemy_scene = ExtResource("5_qslwc")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(193, 351)
-texture = ExtResource("6_nc68n")
+texture = ExtResource("6_tnfki")
 script = ExtResource("7_tx2jj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
@@ -37,15 +38,15 @@ offset_right = 120.0
 offset_bottom = 27.0
 
 [node name="FemaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("8_ax2k0")
+texture = ExtResource("8_i5hnx")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/FemaleDialogueBox"]
 position = Vector2(-157, 0)
-texture = ExtResource("9_fb0lb")
+texture = ExtResource("9_ph6ce")
 
 [node name="MaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("6_nc68n")
+texture = ExtResource("6_tnfki")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/MaleDialogueBox"]
 position = Vector2(160, 0)
-texture = ExtResource("10_yoees")
+texture = ExtResource("10_8ymm0")

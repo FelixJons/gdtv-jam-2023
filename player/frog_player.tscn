@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/frog_player.gd" id="1_tf7gg"]
 [ext_resource type="PackedScene" uid="uid://wdubw62p16x7" path="res://enemies/bullet.tscn" id="2_6i1jh"]
-[ext_resource type="Texture2D" uid="uid://dc022le5327fp" path="res://sprites/player_walking_animation.png" id="3_vf48n"]
+[ext_resource type="Texture2D" uid="uid://dc022le5327fp" path="res://sprites/frog/player_walking_animation.png" id="3_vf48n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h618r"]
 size = Vector2(16, 16)

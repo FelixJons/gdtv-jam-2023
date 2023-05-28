@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6n7x400ce5vw"
-path="res://.godot/imported/dialogue_box_overlay1.png-958ed2e57a267519fc5c00786eb2d80b.ctex"
+uid="uid://p1c05rc1eda6"
+path="res://.godot/imported/enemy_human-Sheet.png-6c60825bd77094d647318386261eb354.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/dialogue_box_overlay1.png"
-dest_files=["res://.godot/imported/dialogue_box_overlay1.png-958ed2e57a267519fc5c00786eb2d80b.ctex"]
+source_file="res://sprites/enemies/enemy_human-Sheet.png"
+dest_files=["res://.godot/imported/enemy_human-Sheet.png-6c60825bd77094d647318386261eb354.ctex"]
 
 [params]
 

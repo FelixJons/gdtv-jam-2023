@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6rykkn6p6iuq"
-path="res://.godot/imported/enemy_human_animation-Sheet.png-d9d925c232359f16d3fd036303c63b09.ctex"
+uid="uid://hqllj6xwtkj4"
+path="res://.godot/imported/blocking_element_corner.png-3db72d998ec725c8db82c83cb0b8373c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy_human_animation-Sheet.png"
-dest_files=["res://.godot/imported/enemy_human_animation-Sheet.png-d9d925c232359f16d3fd036303c63b09.ctex"]
+source_file="res://sprites/environment/blocking_element_corner.png"
+dest_files=["res://.godot/imported/blocking_element_corner.png-3db72d998ec725c8db82c83cb0b8373c.ctex"]
 
 [params]
 

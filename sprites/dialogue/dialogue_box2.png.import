@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ea11a3ln3q8"
-path="res://.godot/imported/player_frog-Sheet-Sheet.png-57f61f60f55dcae34fa4e4f377a2f80c.ctex"
+uid="uid://cglaiquc7dooo"
+path="res://.godot/imported/dialogue_box2.png-98d5dc251433c541ece6d17b1e674ba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player_frog-Sheet-Sheet.png"
-dest_files=["res://.godot/imported/player_frog-Sheet-Sheet.png-57f61f60f55dcae34fa4e4f377a2f80c.ctex"]
+source_file="res://sprites/dialogue/dialogue_box2.png"
+dest_files=["res://.godot/imported/dialogue_box2.png-98d5dc251433c541ece6d17b1e674ba2.ctex"]
 
 [params]
 

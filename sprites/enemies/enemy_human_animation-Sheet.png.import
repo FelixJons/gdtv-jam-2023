@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3cruyghx8t2h"
-path="res://.godot/imported/400x240_background_city.png-d97e324e347dcac5f91ffbbba784539f.ctex"
+uid="uid://6rykkn6p6iuq"
+path="res://.godot/imported/enemy_human_animation-Sheet.png-8020996bc84601ad3dab3c86b28b749c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/400x240_background_city.png"
-dest_files=["res://.godot/imported/400x240_background_city.png-d97e324e347dcac5f91ffbbba784539f.ctex"]
+source_file="res://sprites/enemies/enemy_human_animation-Sheet.png"
+dest_files=["res://.godot/imported/enemy_human_animation-Sheet.png-8020996bc84601ad3dab3c86b28b749c.ctex"]
 
 [params]
 

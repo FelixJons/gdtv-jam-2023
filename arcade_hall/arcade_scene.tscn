@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://s334ukp7rbmp"]
 
 [ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_bi5qh"]
-[ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="2_rp7x7"]
-[ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue_box1.png" id="3_8owf3"]
+[ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/backgrounds/400x240_arcade_hall_no_ducks.png" id="2_b5083"]
+[ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue/dialogue_box1.png" id="3_u21lk"]
 [ext_resource type="Script" path="res://arcade_hall/start_dialogue.gd" id="4_t234w"]
 [ext_resource type="PackedScene" uid="uid://d0rlgj3n6frbj" path="res://game/game_world.tscn" id="5_xnf28"]
 [ext_resource type="FontFile" uid="uid://dvfag37de6n4k" path="res://fonts/upheavtt.ttf" id="6_6ls07"]
-[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="6_7qt7u"]
-[ext_resource type="Texture2D" uid="uid://cglaiquc7dooo" path="res://sprites/dialogue_box2.png" id="7_gyeg8"]
-[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="8_5yb4c"]
+[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="7_ki8ny"]
+[ext_resource type="Texture2D" uid="uid://cglaiquc7dooo" path="res://sprites/dialogue/dialogue_box2.png" id="8_yph06"]
+[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="9_i1kot"]
 [ext_resource type="Script" path="res://arcade_hall/rich_text_label.gd" id="10_5emuw"]
 [ext_resource type="Script" path="res://arcade_hall/answer_manager.gd" id="10_te1kn"]
 
@@ -17,11 +17,11 @@ script = ExtResource("1_bi5qh")
 
 [node name="400x240ArcadeHallNoDucks" type="Sprite2D" parent="."]
 position = Vector2(200, 120)
-texture = ExtResource("2_rp7x7")
+texture = ExtResource("2_b5083")
 
 [node name="Dialogue" type="Sprite2D" parent="."]
 position = Vector2(200, 272)
-texture = ExtResource("3_8owf3")
+texture = ExtResource("3_u21lk")
 script = ExtResource("4_t234w")
 game_scene = ExtResource("5_xnf28")
 
@@ -35,18 +35,18 @@ theme_override_fonts/normal_font = ExtResource("6_6ls07")
 theme_override_font_sizes/normal_font_size = 14
 
 [node name="FemaleDialogueBox" type="Sprite2D" parent="Dialogue"]
-texture = ExtResource("3_8owf3")
+texture = ExtResource("3_u21lk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dialogue/FemaleDialogueBox"]
 position = Vector2(-163, 0)
-texture = ExtResource("6_7qt7u")
+texture = ExtResource("7_ki8ny")
 
 [node name="MaleDialogueBox" type="Sprite2D" parent="Dialogue"]
-texture = ExtResource("7_gyeg8")
+texture = ExtResource("8_yph06")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dialogue/MaleDialogueBox"]
 position = Vector2(168, 0)
-texture = ExtResource("8_5yb4c")
+texture = ExtResource("9_i1kot")
 
 [node name="AnswersContainer" type="BoxContainer" parent="Dialogue" node_paths=PackedStringArray("answer_label_1", "answer_label_2", "answer_label_3")]
 offset_left = -122.0

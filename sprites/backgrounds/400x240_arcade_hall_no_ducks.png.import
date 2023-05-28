@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baaykaesbk81j"
-path="res://.godot/imported/date_duck_dialogue.png-3f6fd761ec21489d91e0b7a1e5a5e794.ctex"
+uid="uid://c6y8ffufl3m4p"
+path="res://.godot/imported/400x240_arcade_hall_no_ducks.png-3139e3dfec21b45201f90fdbfbdf9533.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/date_duck_dialogue.png"
-dest_files=["res://.godot/imported/date_duck_dialogue.png-3f6fd761ec21489d91e0b7a1e5a5e794.ctex"]
+source_file="res://sprites/backgrounds/400x240_arcade_hall_no_ducks.png"
+dest_files=["res://.godot/imported/400x240_arcade_hall_no_ducks.png-3139e3dfec21b45201f90fdbfbdf9533.ctex"]
 
 [params]
 

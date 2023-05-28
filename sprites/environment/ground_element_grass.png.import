@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6y8ffufl3m4p"
-path="res://.godot/imported/400x240_arcade_hall_no_ducks.png-951bf47fdd3fd3778b9e6120891f474a.ctex"
+uid="uid://d4c8y8a3qetxh"
+path="res://.godot/imported/ground_element_grass.png-5748223122162f84f6c1df1b71839a9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/400x240_arcade_hall_no_ducks.png"
-dest_files=["res://.godot/imported/400x240_arcade_hall_no_ducks.png-951bf47fdd3fd3778b9e6120891f474a.ctex"]
+source_file="res://sprites/environment/ground_element_grass.png"
+dest_files=["res://.godot/imported/ground_element_grass.png-5748223122162f84f6c1df1b71839a9a.ctex"]
 
 [params]
 
