@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0rlgj3n6frbj"]
+[gd_scene load_steps=13 format=3 uid="uid://d0rlgj3n6frbj"]
 
 [ext_resource type="Script" path="res://game/game_world.gd" id="1_i0i8j"]
 [ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_mjwl4"]
@@ -10,6 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="8_i5hnx"]
 [ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="9_ph6ce"]
 [ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="10_8ymm0"]
+[ext_resource type="Shader" path="res://game/game_world.gdshader" id="11_nsig0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlt3b"]
+shader = ExtResource("11_nsig0")
+shader_parameter/grain_amount = 0.0
+shader_parameter/scanline_amount = 0.095
+shader_parameter/scanline_speed = 0.05
+shader_parameter/greyness = 0.0
+shader_parameter/resolution = Vector2(384, 384)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_i0i8j")
@@ -50,3 +59,10 @@ texture = ExtResource("6_tnfki")
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/MaleDialogueBox"]
 position = Vector2(160, 0)
 texture = ExtResource("10_8ymm0")
+
+[node name="Shader (MAYBE?)" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_nlt3b")
+offset_left = 1.0
+offset_right = 385.0
+offset_bottom = 384.0
