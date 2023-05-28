@@ -63,6 +63,8 @@ func _physics_process(delta: float):
 	navigation_agent.set_velocity(new_velocity)
 	navigation_agent.set_velocity_forced(new_velocity)
 
-func _on_body_entered(body: PhysicsBody2D):
-	if body == player:  # If the body is the player
-		print("Player has collided with enemy!")  # Handle collision
+signal on_queue_free_custom()
+
+func queue_free_custom():
+	on_queue_free_custom.emit()
+	queue_free()

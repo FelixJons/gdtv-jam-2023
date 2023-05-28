@@ -6,6 +6,7 @@ extends Sprite2D
 @export var game_scene: PackedScene
 var dialogue_dict: Dictionary
 var text_speed: float = 0.05
+var answer_delay: float = 1.0
 var is_loading_dialogue = false
 var current_dialogue_id = "001"
 # Called when the node enters the scene tree for the first time.
@@ -35,15 +36,26 @@ func display_dialogue(dialogue_id: String) -> void:
 	if dialogue_dict[dialogue_id]["type"] == "breakpoint":
 		get_tree().change_scene_to_packed(game_scene)
 		return
+		
+	elif dialogue_dict[dialogue_id]["type"] == "question":
+		is_loading_dialogue = true
+		set_active_char(dialogue_dict[dialogue_id]["char"])
+		text_box.clear()
+		var dialogue_text = dialogue_dict[dialogue_id]["text"]
+		for char in dialogue_text:
+			text_box.add_text(char)
+			await get_tree().create_timer(text_speed).timeout
+		await get_tree().create_timer(answer_delay).timeout
 
-	is_loading_dialogue = true
-	set_active_char(dialogue_dict[dialogue_id]["char"])
-	text_box.clear()
-	var dialogue_text = dialogue_dict[dialogue_id]["text"]
-	for char in dialogue_text:
-		text_box.add_text(char)
-		await get_tree().create_timer(text_speed).timeout
-	is_loading_dialogue = false
+	else:
+		is_loading_dialogue = true
+		set_active_char(dialogue_dict[dialogue_id]["char"])
+		text_box.clear()
+		var dialogue_text = dialogue_dict[dialogue_id]["text"]
+		for char in dialogue_text:
+			text_box.add_text(char)
+			await get_tree().create_timer(text_speed).timeout
+		is_loading_dialogue = false
 	
 func increment_string_number_by_one(s: String) -> String:
 	var number = int(s) # convert the string to int

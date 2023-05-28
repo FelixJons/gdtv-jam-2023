@@ -7,6 +7,8 @@ const TILE_SIZE = 24
 var player 
 var astar_grid_node
 
+var enemies_killed = 0
+
 const SpawnOrigin = {
 	HORIZONTAL = 1,
 	VERTICAL = 2
@@ -28,4 +30,11 @@ func spawn():
 		enemy.setup(player)
 		enemy.position = spawn_point * TILE_SIZE + Vector2i(TILE_SIZE/2, TILE_SIZE/2)
 		add_child(enemy)
+		enemy.on_queue_free_custom.connect(increment_enemies_killed_by_one)
 
+
+signal on_enemies_killed_changed(number_of_killed_enemies)
+
+func increment_enemies_killed_by_one():
+	enemies_killed += 1
+	on_enemies_killed_changed.emit(enemies_killed)

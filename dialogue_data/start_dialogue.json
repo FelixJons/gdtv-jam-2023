@@ -7,9 +7,13 @@
 	"002": {
 		"char": "male_duck",
 		"text": "Hello there",
-		"type": "question"
+		"type": "statement"
 	},
 	"003": {
-		"type": "breakpoint"
+		"char": "male_duck",
+		"text": "Do you like apples?",
+		"type": "question",
+		"answers": ["001","002"],
+		"correct_answer": "001"
 	}
 }

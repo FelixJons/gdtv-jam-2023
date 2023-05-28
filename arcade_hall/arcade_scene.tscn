@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="2_317qg"]
 [ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue_box1.png" id="3_qugfl"]
 [ext_resource type="Script" path="res://arcade_hall/start_dialogue.gd" id="4_8lu6u"]
-[ext_resource type="PackedScene" uid="uid://d0rlgj3n6frbj" path="res://game/world.tscn" id="5_hud64"]
+[ext_resource type="PackedScene" uid="uid://d0rlgj3n6frbj" path="res://game/game_world.tscn" id="5_a21va"]
 [ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="6_ikg5m"]
 [ext_resource type="Texture2D" uid="uid://cglaiquc7dooo" path="res://sprites/dialogue_box2.png" id="7_nfalo"]
 [ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="8_dsc56"]
@@ -20,7 +20,7 @@ texture = ExtResource("2_317qg")
 position = Vector2(200, 272)
 texture = ExtResource("3_qugfl")
 script = ExtResource("4_8lu6u")
-game_scene = ExtResource("5_hud64")
+game_scene = ExtResource("5_a21va")
 
 [node name="DialogueTextLabel" type="RichTextLabel" parent="Dialogue"]
 z_index = 10
