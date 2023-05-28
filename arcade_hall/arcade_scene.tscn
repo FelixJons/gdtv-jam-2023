@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://s334ukp7rbmp"]
+[gd_scene load_steps=5 format=3 uid="uid://s334ukp7rbmp"]
 
 [ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_yr4r1"]
 [ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="2_fay6n"]
 [ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue_box1.png" id="3_xila3"]
-[ext_resource type="Script" path="res://arcade_hall/dialogue_mananger.gd" id="4_umf30"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="5_yt8ec"]
+[ext_resource type="Script" path="res://arcade_hall/dialogue_manager.gd" id="4_j2fpt"]
 
 [node name="ArcadeScene" type="Node2D"]
 script = ExtResource("1_yr4r1")
@@ -16,17 +15,8 @@ texture = ExtResource("2_fay6n")
 [node name="DialogueBox1" type="Sprite2D" parent="."]
 position = Vector2(200, 272)
 texture = ExtResource("3_xila3")
+script = ExtResource("4_j2fpt")
 
 [node name="FadeInWhite" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("4_umf30")
-
-[node name="DialogueLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 76.0
-offset_top = 251.0
-offset_right = 387.0
-offset_bottom = 291.0
-script = ExtResource("5_yt8ec")

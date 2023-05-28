@@ -1,0 +1,4 @@
+{
+    "001":{"char":"female_duck","text":"Hello","type":"statement"},
+    "002":{"char":"male_duck","text":"Hello there","type":"question"}
+}
