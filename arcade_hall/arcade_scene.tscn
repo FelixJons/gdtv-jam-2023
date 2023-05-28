@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://s334ukp7rbmp"]
+[gd_scene load_steps=9 format=3 uid="uid://s334ukp7rbmp"]
 
 [ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_yr4r1"]
 [ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="2_fay6n"]
 [ext_resource type="Texture2D" uid="uid://wxpar3hl0b8f" path="res://sprites/dialogue_box1.png" id="3_xila3"]
-[ext_resource type="Script" path="res://arcade_hall/dialogue_manager.gd" id="4_j2fpt"]
+[ext_resource type="Script" path="res://arcade_hall/start_dialogue.gd" id="4_m0v3w"]
+[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/date_duck_dialogue.png" id="5_5eiwj"]
+[ext_resource type="PackedScene" uid="uid://d0rlgj3n6frbj" path="res://game/world.tscn" id="5_7an0j"]
+[ext_resource type="Texture2D" uid="uid://cglaiquc7dooo" path="res://sprites/dialogue_box2.png" id="6_b88s3"]
+[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="7_55bne"]
 
 [node name="ArcadeScene" type="Node2D"]
 script = ExtResource("1_yr4r1")
@@ -12,10 +16,32 @@ script = ExtResource("1_yr4r1")
 position = Vector2(200, 120)
 texture = ExtResource("2_fay6n")
 
-[node name="DialogueBox1" type="Sprite2D" parent="."]
+[node name="Dialogue" type="Sprite2D" parent="."]
 position = Vector2(200, 272)
 texture = ExtResource("3_xila3")
-script = ExtResource("4_j2fpt")
+script = ExtResource("4_m0v3w")
+game_scene = ExtResource("5_7an0j")
+
+[node name="DialogueTextLabel" type="RichTextLabel" parent="Dialogue"]
+z_index = 10
+offset_left = -130.0
+offset_top = -24.0
+offset_right = 131.0
+offset_bottom = 23.0
+
+[node name="FemaleDialogueBox" type="Sprite2D" parent="Dialogue"]
+texture = ExtResource("3_xila3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dialogue/FemaleDialogueBox"]
+position = Vector2(-163, 0)
+texture = ExtResource("5_5eiwj")
+
+[node name="MaleDialogueBox" type="Sprite2D" parent="Dialogue"]
+texture = ExtResource("6_b88s3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dialogue/MaleDialogueBox"]
+position = Vector2(168, 0)
+texture = ExtResource("7_55bne")
 
 [node name="FadeInWhite" type="CanvasModulate" parent="."]
 visible = false
