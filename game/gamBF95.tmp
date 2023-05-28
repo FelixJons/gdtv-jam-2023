@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0rlgj3n6frbj"]
+[gd_scene load_steps=14 format=3 uid="uid://d0rlgj3n6frbj"]
 
 [ext_resource type="Script" path="res://game/game_world.gd" id="1_i0i8j"]
 [ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_mjwl4"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="10_8ymm0"]
 [ext_resource type="Shader" path="res://game/game_world.gdshader" id="11_nsig0"]
 [ext_resource type="PackedScene" uid="uid://fmr5g2onrfkb" path="res://enemies/bat_enemy.tscn" id="12_jm6u1"]
-[ext_resource type="Texture2D" uid="uid://ckv8odx5x87ib" path="res://sprites/enemies/enemy_mosquito.png" id="13_cqf50"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlt3b"]
 shader = ExtResource("11_nsig0")
@@ -71,7 +70,3 @@ offset_bottom = 384.0
 
 [node name="Bat" parent="." instance=ExtResource("12_jm6u1")]
 position = Vector2(124, 170)
-
-[node name="EnemyMosquito" type="Sprite2D" parent="."]
-position = Vector2(224, 94)
-texture = ExtResource("13_cqf50")

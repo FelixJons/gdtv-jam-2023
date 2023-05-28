@@ -1021,7 +1021,7 @@ texture_region_size = Vector2i(24, 24)
 
 [sub_resource type="TileSet" id="TileSet_bowp7"]
 tile_size = Vector2i(24, 24)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 navigation_layer_0/layers = 1
 custom_data_layer_0/name = "SpawnPoint"
 custom_data_layer_0/type = 1

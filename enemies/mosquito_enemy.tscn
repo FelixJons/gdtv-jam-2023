@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://erofuuvpsvlx"]
+
+[ext_resource type="Texture2D" uid="uid://ckv8odx5x87ib" path="res://sprites/enemies/enemy_mosquito.png" id="1_0xqry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hit8e"]
+size = Vector2(24, 20)
+
+[node name="Mosquito" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0xqry")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hit8e")
