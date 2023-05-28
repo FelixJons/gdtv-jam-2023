@@ -1,10 +1,10 @@
 {
 	"001": {
-        "short_text": "y",
+        "short_text": "1. y",
 		"text": "Yes!"
 	},
     "002": {
-        "short_text": "n",
+        "short_text": "2. n",
         "text": "No!"
     }
 }

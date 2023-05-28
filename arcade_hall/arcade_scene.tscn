@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://s334ukp7rbmp"]
+[gd_scene load_steps=12 format=3 uid="uid://s334ukp7rbmp"]
 
 [ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_bi5qh"]
 [ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/400x240_arcade_hall_no_ducks.png" id="2_rp7x7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cglaiquc7dooo" path="res://sprites/dialogue_box2.png" id="7_gyeg8"]
 [ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/gamer_duck_dialogue.png" id="8_5yb4c"]
 [ext_resource type="Script" path="res://arcade_hall/rich_text_label.gd" id="10_5emuw"]
+[ext_resource type="Script" path="res://arcade_hall/answer_manager.gd" id="10_te1kn"]
 
 [node name="ArcadeScene" type="Node2D"]
 script = ExtResource("1_bi5qh")
@@ -24,8 +25,7 @@ texture = ExtResource("3_8owf3")
 script = ExtResource("4_t234w")
 game_scene = ExtResource("5_xnf28")
 
-[node name="DialogueTextLabel" type="RichTextLabel" parent="Dialogue"]
-visible = false
+[node name="DialogueText" type="RichTextLabel" parent="Dialogue"]
 z_index = 10
 offset_left = -130.0
 offset_top = -24.0
@@ -48,43 +48,44 @@ texture = ExtResource("7_gyeg8")
 position = Vector2(168, 0)
 texture = ExtResource("8_5yb4c")
 
+[node name="AnswersContainer" type="BoxContainer" parent="Dialogue" node_paths=PackedStringArray("answer_label_1", "answer_label_2", "answer_label_3")]
+offset_left = -122.0
+offset_top = -29.0
+offset_right = 133.0
+offset_bottom = 31.0
+vertical = true
+script = ExtResource("10_te1kn")
+answer_label_1 = NodePath("Answer1")
+answer_label_2 = NodePath("Answer2")
+answer_label_3 = NodePath("Answer3")
+
+[node name="Answer1" type="RichTextLabel" parent="Dialogue/AnswersContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_6ls07")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+fit_content = true
+meta_underlined = false
+script = ExtResource("10_5emuw")
+
+[node name="Answer2" type="RichTextLabel" parent="Dialogue/AnswersContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_6ls07")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+fit_content = true
+meta_underlined = false
+script = ExtResource("10_5emuw")
+
+[node name="Answer3" type="RichTextLabel" parent="Dialogue/AnswersContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_6ls07")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+fit_content = true
+meta_underlined = false
+script = ExtResource("10_5emuw")
+
 [node name="FadeInWhite" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
-
-[node name="BoxContainer" type="BoxContainer" parent="."]
-offset_left = 78.0
-offset_top = 243.0
-offset_right = 333.0
-offset_bottom = 320.0
-vertical = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BoxContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("6_6ls07")
-theme_override_font_sizes/normal_font_size = 17
-bbcode_enabled = true
-text = "[url=1]Text [/url]"
-fit_content = true
-meta_underlined = false
-script = ExtResource("10_5emuw")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BoxContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("6_6ls07")
-theme_override_font_sizes/normal_font_size = 17
-bbcode_enabled = true
-text = "[url=2]Text [/url]"
-fit_content = true
-meta_underlined = false
-script = ExtResource("10_5emuw")
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="BoxContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("6_6ls07")
-theme_override_font_sizes/normal_font_size = 17
-bbcode_enabled = true
-text = "[url=3]Text[/url]"
-fit_content = true
-meta_underlined = false
-script = ExtResource("10_5emuw")

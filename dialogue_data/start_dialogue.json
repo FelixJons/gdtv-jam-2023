@@ -14,6 +14,23 @@
 		"text": "Do you like apples?",
 		"type": "question",
 		"answers": ["001","002"],
-		"correct_answer": "001"
+		"correct_answer": "001",
+		"failed_response": "Well geeeetouta here then! Sho!"
+	},
+	"004": {
+		"char": "male_duck",
+		"text": "Nice, me too!",
+		"type": "statement"
+	},
+	"005": {
+		"char": "male_duck",
+		"text": "Lets play!",
+		"type": "statement"
+	},
+	"006": {
+		"type": "breakpoint"
 	}
+
+
+
 }

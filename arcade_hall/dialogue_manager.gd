@@ -1,7 +1,7 @@
 extends Node
 
 var start_dialogue_file_path = "res://dialogue_data/start_dialogue.json"
-var answer_dialogue_file_path = "res://dialogue_data/start_dialogue.json"
+var answer_dialogue_file_path = "res://dialogue_data/answers.json"
 var start_dialogue_dict: Dictionary
 var answer_dialogue_dict: Dictionary
 
