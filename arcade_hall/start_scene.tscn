@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://cery8nlwb4fh"]
 
-[ext_resource type="Texture2D" uid="uid://d3cruyghx8t2h" path="res://sprites/400x240_background_city.png" id="1_0wxm8"]
-[ext_resource type="Script" path="res://arcade_hall/start_camera.gd" id="2_q7ses"]
-[ext_resource type="PackedScene" uid="uid://s334ukp7rbmp" path="res://arcade_hall/arcade_scene.tscn" id="3_prk6v"]
+[ext_resource type="Texture2D" uid="uid://d3cruyghx8t2h" path="res://sprites/400x240_background_city.png" id="1_pxvd3"]
+[ext_resource type="Script" path="res://arcade_hall/start_camera.gd" id="2_j63sx"]
+[ext_resource type="PackedScene" uid="uid://s334ukp7rbmp" path="res://arcade_hall/arcade_scene.tscn" id="3_yqmls"]
 
 [node name="StartScene" type="Node2D"]
 
 [node name="400x240BackgroundCity" type="Sprite2D" parent="."]
 position = Vector2(200, 120)
-texture = ExtResource("1_0wxm8")
+texture = ExtResource("1_pxvd3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(200, 120)
-script = ExtResource("2_q7ses")
-arcade_scene = ExtResource("3_prk6v")
+script = ExtResource("2_j63sx")
+arcade_scene = ExtResource("3_yqmls")
 
 [node name="ZoomInPoint" type="Node2D" parent="Camera2D"]
 position = Vector2(80, 80)
