@@ -11,14 +11,13 @@ extends Node2D
 @onready var bat_timer = $BatTimer
 
 var enemy_kill_count = 0
-var dialogue_kill_count_triggers = [3,6]
+var dialogue_kill_count_triggers = [3,6,9]
 var is_start_dialogue_finished = false
 var is_game_running = false
 var is_dialogue_active = false
 var phase_id = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	enemy_spawner.set_current_level("Level1")
 	enemy_spawner.on_enemies_killed_changed.connect(incremenent_kill_count)
 	get_window().set_content_scale_size(Vector2i(24*16,24*16))
@@ -33,12 +32,12 @@ func _ready():
 func incremenent_kill_count(count: int):
 	if not is_dialogue_active:
 		enemy_kill_count += count
+		print(enemy_kill_count)
 		if enemy_kill_count in dialogue_kill_count_triggers:
 			dialogue_box.step_dialogue_from_in_game()
 			is_dialogue_active = true
 		
 func _process(delta):
-	print(enemy_kill_count)
 	if is_game_running:
 		return
 	if is_start_dialogue_finished and Input.is_action_just_pressed("item"):
@@ -71,4 +70,10 @@ func enable_kill_count():
 		bat_timer.start()
 		bat_timer.wait_time = 6.0
 		bat_timer.timeout.connect(enemy_spawner.spawn_bats)
+	elif phase_id == 2:
+		mosquito_timer.start()
+		mosquito_timer.wait_time = 5.0
+		mosquito_timer.timeout.connect(enemy_spawner.spawn_mosquitos)
+	else:
+		print("GAME OVER!")
 	is_dialogue_active = false

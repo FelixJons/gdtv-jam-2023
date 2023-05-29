@@ -64,6 +64,33 @@
     "012": {
 		"type": "breakpoint",
 		"command": "dialogue_window_off"
+	},
+    "013": {
+        "char": "male_duck",
+		"text": "Okay!!!!",
+		"type": "statement"
+    },    
+    "014": {
+        "char": "male_duck",
+		"text": "Okay, last statement!",
+		"type": "statement"
+    },
+    "015": {
+		"char": "male_duck",
+		"text": "Answer yes on this question",
+        "type": "question",
+        "answers": ["001","002"],
+        "correct_answer": "001",
+        "failed_response": "Criiiinge!!!"
+	},
+    "016": {
+        "char": "male_duck",
+		"text": "Nice!",
+		"type": "statement"
+    },
+    "017": {
+		"type": "breakpoint",
+		"command": "dialogue_window_off"
 	}
 
 }		

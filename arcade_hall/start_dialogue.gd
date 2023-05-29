@@ -138,7 +138,6 @@ func answer_recieved(id: String, full_answer):
 		game_over_by_dialogue = false
 	else:
 		game_over_by_dialogue = true
-	
 
 
 func display_full_answer(full_answer):
@@ -151,7 +150,6 @@ func display_full_answer(full_answer):
 		await get_tree().create_timer(text_speed).timeout
 		
 	is_loading_dialogue = false
-	
 
 
 func display_failed_response():
