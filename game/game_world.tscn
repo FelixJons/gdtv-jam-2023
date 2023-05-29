@@ -365,18 +365,12 @@ meta_underlined = false
 script = ExtResource("15_1n78k")
 
 [node name="ScreenShader" type="ColorRect" parent="."]
+z_index = 2
 material = SubResource("ShaderMaterial_nlt3b")
 offset_left = 1.0
 offset_right = 385.0
 offset_bottom = 384.0
 mouse_filter = 2
-
-[node name="TransitionShader" type="ColorRect" parent="."]
-z_index = 10
-material = SubResource("ShaderMaterial_4efw8")
-offset_right = 388.0
-offset_bottom = 385.0
-color = Color(0, 0, 0, 0)
 
 [node name="PressStartText" parent="." instance=ExtResource("14_rtt8b")]
 offset_left = 117.0
@@ -384,3 +378,11 @@ offset_top = 81.0
 offset_right = 263.0
 offset_bottom = 106.0
 text = "PRESS START"
+
+[node name="TransitionShader" type="ColorRect" parent="."]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_4efw8")
+offset_right = 388.0
+offset_bottom = 385.0
+color = Color(0, 0, 0, 0)
