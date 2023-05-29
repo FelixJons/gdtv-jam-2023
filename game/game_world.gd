@@ -62,8 +62,8 @@ func start_game():
 	frog_player.is_active = true
 	default_vertical_timer.start()
 	default_horizontal_timer.start()
-	default_vertical_timer.wait_time = 7.0
-	default_horizontal_timer.wait_time = 5.0
+	default_vertical_timer.wait_time = 8
+	default_horizontal_timer.wait_time = 10
 	default_vertical_timer.timeout.connect(enemy_spawner.spawn_default_vertical)
 	default_horizontal_timer.timeout.connect(enemy_spawner.spawn_default_horizontal)
 	
@@ -74,14 +74,13 @@ func enable_kill_count():
 	phase_id += 1
 	if phase_id == 1:
 		bat_timer.start()
-		bat_timer.wait_time = 6.0
+		bat_timer.wait_time = 3.0
 		bat_timer.timeout.connect(enemy_spawner.spawn_bats)
 	elif phase_id == 2:
 		mosquito_timer.start()
 		mosquito_timer.wait_time = 5.0
 		mosquito_timer.timeout.connect(enemy_spawner.spawn_mosquitos)
 	else:
-		print("Game ova")
 		game_over_tween(true)
 	is_dialogue_active = false
 	

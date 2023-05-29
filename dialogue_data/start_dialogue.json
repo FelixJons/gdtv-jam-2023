@@ -1,33 +1,63 @@
 {
 	"001": {
 		"char": "female_duck",
-		"text": "Hello",
+		"text": "Hey? Are you David?",
 		"type": "statement"
 	},
 	"002": {
 		"char": "male_duck",
-		"text": "Hello there",
+		"text": "Yes, that's me! You must be Lisa, correct?",
 		"type": "statement"
 	},
 	"003": {
-		"char": "male_duck",
-		"text": "Do you like apples?",
-		"type": "question",
-		"answers": ["001","002"],
-		"correct_answer": "001",
-		"failed_response": "GETOUTA HERE"
+		"char": "female_duck",
+		"text": "Yes, that's me! Nice to finally meet you!",
+		"type": "statement"
 	},
 	"004": {
 		"char": "male_duck",
-		"text": "Nice, me too!",
+		"text": "Likewise, Lisa. Just to let you know, I have a bit of an... eccentric taste. I appreciate the finer things in life, and that includes my company.",
 		"type": "statement"
 	},
 	"005": {
 		"char": "male_duck",
-		"text": "Lets play!",
+		"text": "I hope you won't find it too rude, but if I feel our interests don't align, I have a habit of cutting the meeting short. I believe in not wasting anyone's time, you see.",
 		"type": "statement"
 	},
 	"006": {
+		"char": "female_duck",
+		"text": "I see, well, I'm sure we'll have plenty to talk about!",
+		"type": "statement"
+	},
+	"007": {
+		"char": "male_duck",
+		"text": "Well, I thought it might be fun to have our date here. Plus, there's a bit of a selfish reason...",
+		"type": "statement"
+	},
+	"008": {
+		"char": "female_duck",
+		"text": "Oh? And what might that be?",
+		"type": "statement"
+	},
+	"009": {
+		"char": "male_duck",
+		"text": "Well... there's this game I've been trying to beat for ages, but I can't seem to do it!",
+		"type": "statement"
+	},
+	"010": {
+		"char": "male_duck",
+		"text": "I was thinkin... maybe you could try?",
+		"type": "question",
+		"answers": ["001","002"],
+		"correct_answer": "all",
+		"failed_response": "NULL"
+	},
+	"011": {
+		"char": "male_duck",
+		"text": "Great! Let's go then.",
+		"type": "statement"
+	},
+	"012": {
 		"type": "breakpoint",
 		"command": "start_arcade"
 	}

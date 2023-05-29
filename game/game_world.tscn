@@ -259,11 +259,11 @@ shader_parameter/scanlines_opacity = 0.4
 shader_parameter/scanlines_width = 0.25
 shader_parameter/grille_opacity = 0.3
 shader_parameter/resolution = Vector2(384, 384)
-shader_parameter/pixelate = true
+shader_parameter/pixelate = false
 shader_parameter/roll = true
-shader_parameter/roll_speed = 8.0
+shader_parameter/roll_speed = 4.4
 shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
+shader_parameter/roll_variation = 2.714
 shader_parameter/distort_intensity = 0.05
 shader_parameter/noise_opacity = 0.4
 shader_parameter/noise_speed = 5.0
@@ -273,7 +273,7 @@ shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="Shader" id="Shader_67qnb"]
@@ -321,7 +321,6 @@ mosquito_enemy_scene = ExtResource("6_rbp4q")
 bat_enemy_scene = ExtResource("7_3h4yj")
 
 [node name="ScreenShader" type="ColorRect" parent="."]
-visible = false
 z_index = 2
 material = SubResource("ShaderMaterial_nlt3b")
 offset_left = 1.0
@@ -337,7 +336,6 @@ offset_bottom = 106.0
 text = "PRESS START"
 
 [node name="TransitionShader" type="ColorRect" parent="."]
-visible = false
 z_index = 10
 material = SubResource("ShaderMaterial_4efw8")
 offset_right = 388.0
@@ -373,7 +371,7 @@ offset_top = -26.0
 offset_right = 120.0
 offset_bottom = 27.0
 theme_override_fonts/normal_font = ExtResource("10_ekhtl")
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 10
 
 [node name="FemaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
 texture = ExtResource("11_3s75b")
@@ -403,7 +401,7 @@ answer_label_3 = NodePath("Answer3")
 [node name="Answer1" type="RichTextLabel" parent="DialogueBox/AnswersContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("10_ekhtl")
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
@@ -412,7 +410,7 @@ script = ExtResource("15_xeokh")
 [node name="Answer2" type="RichTextLabel" parent="DialogueBox/AnswersContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("10_ekhtl")
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
@@ -421,7 +419,7 @@ script = ExtResource("15_xeokh")
 [node name="Answer3" type="RichTextLabel" parent="DialogueBox/AnswersContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("10_ekhtl")
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false

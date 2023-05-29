@@ -1,96 +1,134 @@
 {
 	"001": {
 		"char": "male_duck",
-		"text": "So this is the game!",
+		"text": "So this is the game! It's a bit old as you can see, hehe...",
 		"type": "statement"
 	},
     "002": {
-		"char": "male_duck",
-		"text": "Have you played it before?",
-		"type": "question",
-        "answers": ["001","002"],
-        "correct_answer": "001",
-        "failed_response": "NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+		"char": "female_duck",
+		"text": "Holy goose! I can barely see the pixels on the screen! :O",
+		"type": "statement"
 	},
     "003": {
-        "char": "male_duck",
-		"text": "Hm, alrite! Lets go!",
-		"type": "statement"
-    },
-	"004": {
-		"type": "breakpoint",
-		"command": "start_game"
-	},
-    "005": {
 		"char": "male_duck",
-		"text": "Wow, your not so bad!",
+		"text": "Yeah I know! But I really want to beat it!",
+		"type": "statement"
+	},
+    "004": {
+        "char": "male_duck",
+        "text": "You move the frog with WASD, and can fire slime balls with the key arrows!",
         "type": "statement"
-	},
-    "006": {
-		"char": "male_duck",
-		"text": "Do you like the game so far?",
-        "type": "question",
-        "answers": ["001","002"],
-        "correct_answer": "001",
-        "failed_response": "WELL NOBODY IS FORCING YOU TO PLAY THIS GAME SO GETTTTOUTA HERE YALL!!!"
-	},
-    "007": {
-        "char": "male_duck",
-		"text": "Nice, me too! This is my favourite game!",
-		"type": "statement"
     },
+    "005": {
+        "char": "male_duck",
+        "text": "Alright! Lets go! Press space when you're ready, and to get goosin!",
+        "type": "statement"
+    },
+    "006":{
+        "type": "breakpoint",
+        "command": "start_game"
+    },   
+    "007": {
+		"char": "male_duck",
+		"text": "Wow, you're not so bad at this!",
+        "type": "statement"
+	}, 
     "008": {
-		"type": "breakpoint",
-		"command": "dialogue_window_off"
-	},
+        "char": "female_duck",
+		"text": "Thanks, I actually played a lot of video games in my days!",
+        "type": "statement"
+    },
     "009": {
 		"char": "male_duck",
-		"text": "So how about Ed Sheeran huh? Whata guy!",
-        "type": "statement"
+		"text": "Oh? What is your favourite games then?",
+        "type": "question",
+        "answers": ["003","004", "005"],
+        "correct_answer": "005",
+        "failed_response": "Awww geese, I suddenly got the urge to leave..."
 	},
     "010": {
 		"char": "male_duck",
-		"text": "Do you like his music?",
-        "type": "question",
-        "answers": ["003","004"],
-        "correct_answer": "004",
-        "failed_response": "Criiiinge!!!"
+		"text": "Yeah I love Stardew Valley! You got really good taste in video games!",
+        "type": "statement"
 	},
     "011": {
-        "char": "male_duck",
-		"text": "Ye, u preachin to the church gurl!",
-		"type": "statement"
-    },
-    "012": {
 		"type": "breakpoint",
 		"command": "dialogue_window_off"
 	},
-    "013": {
-        "char": "male_duck",
-		"text": "Okay!!!!",
-		"type": "statement"
-    },    
-    "014": {
-        "char": "male_duck",
-		"text": "Okay, last statement!",
-		"type": "statement"
-    },
-    "015": {
-		"char": "male_duck",
-		"text": "Answer yes on this question",
-        "type": "question",
-        "answers": ["001","002"],
-        "correct_answer": "001",
-        "failed_response": "Criiiinge!!!"
-	},
-    "016": {
-        "char": "male_duck",
-		"text": "Nice!",
-		"type": "statement"
-    },
-    "017": {
-		"type": "breakpoint",
-		"command": "dialogue_window_off"
-	}
-
+    
+        "012": {
+            "char": "male_duck",
+            "text": "By the way, have you been to any concerts this summer?",
+            "type": "statement"
+        },
+        "013": {
+            "char": "female_duck",
+            "text": "No, I haven't had the chance. But I would have really liked to.",
+            "type": "statement"
+        },
+        "014": {
+            "char": "male_duck",
+            "text": "Oh, that's too bad. Concerts can be really fun. Who is your favourite artist? I like artists who incorporates pshycoanalytic themes and metefors...",
+            "type": "question",
+            "answers": ["006","007", "008"],
+            "correct_answer": "006",
+            "failed_response": "Awww geese, I guess you don't love your ears that much..."
+        },
+        "015": {
+            "char": "male_duck",
+            "text": "Yeah, me too! Everyone in my surroundings says I have serious mother issues, but I don't see it!",
+            "type": "statement"
+        },
+        "016": {
+            "type": "breakpoint",
+            "command": "dialogue_window_off"
+        },
+        "017":{
+            "char": "male_duck",
+            "text": "You seem to really have a developed taste! I like that!",
+            "type": "statement"
+        },
+        "018": {
+            "char": "male_duck",
+            "text": "You know, all this talk of games and music got me thinking about other forms of expression. Have you ever thought about absurdism and existentialism?",
+            "type": "statement"
+        },
+        "019": {
+            "char": "female_duck",
+            "text": "Oh, absolutely. They're fascinating philosophical movements. I see them reflected everywhere in our culture.",
+            "type": "statement"
+        },
+        "020": {
+            "char": "male_duck",
+            "text": "Exactly! Like in games, for example. They often put us in absurd situations, where we must find our own purpose.",
+            "type": "statement"
+        },
+        "021": {
+            "char": "female_duck",
+            "text": "And in music, too. Many artists express existential ideas in their lyrics, questioning the meaning of existence and exploring the human condition.",
+            "type": "statement"
+        },
+        "022": {
+            "char": "male_duck",
+            "text": "I couldn't agree more. It's fascinating to see these themes in our everyday lives!",
+            "type": "statement"
+        },
+        "023": {
+            "char": "male_duck",
+            "text": "We can't forget about the movies! You watched anything good lately?",
+            "type": "question",
+            "answers": ["009","010", "011"],
+            "correct_answer": "009",
+            "failed_response": "Awww geese, I guess you were just a poser huh..."
+        },
+        "024": {
+            "char": "male_duck",
+            "text": "You really are a true connoisseur of the arts! I think I am in love...!",
+            "type": "statement"
+        },
+        "025": {
+            "type": "breakpoint",
+            "command": "dialogue_window_off"
+        }
+        
 }		
