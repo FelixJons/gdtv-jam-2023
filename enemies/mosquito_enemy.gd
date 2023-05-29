@@ -13,18 +13,15 @@ func setup(player: Node2D, spawn_cells: Array[Vector2i]):
 	respawn()
 	
 func respawn():
-	print("spawned")
 	var random_cell = spawn_cells[randi() % spawn_cells.size()]
 	global_position = random_cell * 24
 	direction = get_direction_towards_player()
-	print(global_position)
 
 
 func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
-	print(global_position)
-
+	
 func set_direction_towards_player():
 	direction = get_direction_towards_player()
 	

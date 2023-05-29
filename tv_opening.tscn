@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1fggkvgq57pu"]
+
+[ext_resource type="Shader" path="res://game/tv_opening_shader.gdshader" id="1_my753"]
+[ext_resource type="Script" path="res://game/tv_shader_tween.gd" id="2_bhl7g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e08dc"]
+shader = ExtResource("1_my753")
+shader_parameter/progress = 1.0
+
+[node name="ColorRect" type="ColorRect"]
+visible = false
+top_level = true
+z_index = 100
+material = SubResource("ShaderMaterial_e08dc")
+offset_right = 385.0
+offset_bottom = 385.0
+script = ExtResource("2_bhl7g")
