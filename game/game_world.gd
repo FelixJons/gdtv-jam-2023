@@ -75,5 +75,8 @@ func enable_kill_count():
 		mosquito_timer.wait_time = 5.0
 		mosquito_timer.timeout.connect(enemy_spawner.spawn_mosquitos)
 	else:
-		print("GAME OVER!")
+		print("Game ova")
+		var tween = get_tree().create_tween()
+		tween.tween_property($GameOverShader.material, "shader_parameter/progress", 1.0, 4)
 	is_dialogue_active = false
+

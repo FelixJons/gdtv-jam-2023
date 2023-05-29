@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0rlgj3n6frbj"]
+[gd_scene load_steps=23 format=3 uid="uid://d0rlgj3n6frbj"]
 
 [ext_resource type="Script" path="res://game/game_world.gd" id="1_u35l1"]
 [ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_dg306"]
@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://arcade_hall/answer_manager.gd" id="14_q20oy"]
 [ext_resource type="Script" path="res://arcade_hall/rich_text_label.gd" id="15_xeokh"]
 [ext_resource type="PackedScene" uid="uid://d2ctdbl6sent7" path="res://blinking_text.tscn" id="16_ub314"]
-[ext_resource type="Shader" path="res://shaders/game_world_transition_shader.gdshader" id="17_dp7f2"]
+[ext_resource type="Shader" path="res://game/game_over_transition_shader.gdshader" id="17_l0k7k"]
 
 [sub_resource type="Shader" id="Shader_ip3nw"]
 code = "/*
@@ -275,10 +275,33 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
+[sub_resource type="Shader" id="Shader_67qnb"]
+code = "shader_type canvas_item;
+
+uniform int visible_rows = 0;
+uniform float offset = 0.0;
+
+const float viewport_height = 1.0 / 384.0;
+const float row_size = 1.0 / 8.0;
+
+void fragment() {
+	float y = UV.y / viewport_height;
+	float row = float((y * row_size) + (offset * row_size));
+
+	if (row > float(visible_rows)) {
+		COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+	}
+}"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4efw8"]
-shader = ExtResource("17_dp7f2")
+shader = SubResource("Shader_67qnb")
 shader_parameter/visible_rows = 0
 shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yfybr"]
+shader = ExtResource("17_l0k7k")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 10.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_u35l1")
@@ -294,6 +317,44 @@ script = ExtResource("4_06xsv")
 default_enemy_scene = ExtResource("5_sty1u")
 mosquito_enemy_scene = ExtResource("6_rbp4q")
 bat_enemy_scene = ExtResource("7_3h4yj")
+
+[node name="ScreenShader" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_nlt3b")
+offset_left = 1.0
+offset_right = 385.0
+offset_bottom = 384.0
+mouse_filter = 2
+
+[node name="PressStartText" parent="." instance=ExtResource("16_ub314")]
+offset_left = 117.0
+offset_top = 81.0
+offset_right = 263.0
+offset_bottom = 106.0
+text = "PRESS START"
+
+[node name="TransitionShader" type="ColorRect" parent="."]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_4efw8")
+offset_right = 388.0
+offset_bottom = 385.0
+color = Color(0, 0, 0, 0)
+
+[node name="DefaultVerticalTimer" type="Timer" parent="."]
+
+[node name="DefaultHorizontalTimer" type="Timer" parent="."]
+
+[node name="MosquitoTimer" type="Timer" parent="."]
+
+[node name="BatTimer" type="Timer" parent="."]
+
+[node name="GameOverShader" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_yfybr")
+offset_right = 387.0
+offset_bottom = 385.0
+color = Color(0, 0, 0, 1)
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
 visible = false
@@ -363,35 +424,3 @@ bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("15_xeokh")
-
-[node name="ScreenShader" type="ColorRect" parent="."]
-visible = false
-z_index = 2
-material = SubResource("ShaderMaterial_nlt3b")
-offset_left = 1.0
-offset_right = 385.0
-offset_bottom = 384.0
-mouse_filter = 2
-
-[node name="PressStartText" parent="." instance=ExtResource("16_ub314")]
-offset_left = 117.0
-offset_top = 81.0
-offset_right = 263.0
-offset_bottom = 106.0
-text = "PRESS START"
-
-[node name="TransitionShader" type="ColorRect" parent="."]
-visible = false
-z_index = 10
-material = SubResource("ShaderMaterial_4efw8")
-offset_right = 388.0
-offset_bottom = 385.0
-color = Color(0, 0, 0, 0)
-
-[node name="DefaultVerticalTimer" type="Timer" parent="."]
-
-[node name="DefaultHorizontalTimer" type="Timer" parent="."]
-
-[node name="MosquitoTimer" type="Timer" parent="."]
-
-[node name="BatTimer" type="Timer" parent="."]
