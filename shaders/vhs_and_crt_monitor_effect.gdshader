@@ -1,21 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0rlgj3n6frbj"]
-
-[ext_resource type="Script" path="res://game/game_world.gd" id="1_esyfm"]
-[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_6tj6i"]
-[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_e7v3t"]
-[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_jnwng"]
-[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_51har"]
-[ext_resource type="PackedScene" uid="uid://erofuuvpsvlx" path="res://enemies/mosquito_enemy.tscn" id="6_q7xw0"]
-[ext_resource type="PackedScene" uid="uid://fmr5g2onrfkb" path="res://enemies/bat_enemy.tscn" id="7_c3ib7"]
-[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue/dialogue_box_overlay2.png" id="8_735by"]
-[ext_resource type="Script" path="res://game/ingame_dialogue.gd" id="9_6n1jc"]
-[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="10_rxi85"]
-[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="11_tqp7d"]
-[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="12_d27v5"]
-[ext_resource type="Shader" path="res://game/game_world_transition_shader.gdshader" id="13_qsrfj"]
-
-[sub_resource type="Shader" id="Shader_ip3nw"]
-code = "/*
+/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/VHS-and-CRT-monitor-effect
 
@@ -31,8 +14,8 @@ shader_type canvas_item;
 // - If you are using this shader as an overlay, and want the shader to affect the nodes below in the Scene hierarchy,
 //   set 'overlay' to true (checked in the inspector).
 // On Mac there is potentially a bug causing this to not work properly. If that is the case and you want to use the shader as an overlay
-// change all \"overlay ? SCREEN_TEXTURE : TEXTURE\" to only \"SCREEN_TEXTURE\" on lines 129-140, and \"vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV);\"
-// to \"vec2 uv = warp(SCREEN_UV);\" on line 98.
+// change all "overlay ? SCREEN_TEXTURE : TEXTURE" to only "SCREEN_TEXTURE" on lines 129-140, and "vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV);"
+// to "vec2 uv = warp(SCREEN_UV);" on line 98.
 uniform bool overlay = false;
 
 uniform float scanlines_opacity : hint_range(0.0, 1.0) = 0.4;
@@ -40,7 +23,7 @@ uniform float scanlines_width : hint_range(0.0, 0.5) = 0.25;
 uniform float grille_opacity : hint_range(0.0, 1.0) = 0.3;
 uniform vec2 resolution = vec2(640.0, 480.0); // Set the number of rows and columns the texture will be divided in. Scanlines and grille will make a square based on these values
 
-uniform bool pixelate = true; // Fill each square (\"pixel\") with a sampled color, creating a pixel look and a more accurate representation of how a CRT monitor would work.
+uniform bool pixelate = true; // Fill each square ("pixel") with a sampled color, creating a pixel look and a more accurate representation of how a CRT monitor would work.
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
@@ -206,7 +189,7 @@ void fragment()
 		// We use roll_line (set above) to define how big the noise should be vertically (multiplying cuts off all black parts).
 		// We also add in some basic noise with random() to break up the noise pattern above. The noise is sized according to 
 		// the resolution value set in the inspector. If you don't like this look you can 
-		// change \"ceil(uv * resolution) / resolution\" to only \"uv\" to make it less pixelated. Or multiply resolution with som value
+		// change "ceil(uv * resolution) / resolution" to only "uv" to make it less pixelated. Or multiply resolution with som value
 		// greater than 1.0 to make them smaller.
 		roll_line *= noise * scanlines * clamp(random((ceil(uv * resolution) / resolution) + vec2(TIME * 0.8, 0.0)).x + 0.8, 0.0, 1.0);
 		// Add it to the texture based on noise_opacity
@@ -245,89 +228,4 @@ void fragment()
 	}
 	
 	COLOR = text;
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlt3b"]
-shader = SubResource("Shader_ip3nw")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.4
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.3
-shader_parameter/resolution = Vector2(384, 384)
-shader_parameter/pixelate = true
-shader_parameter/roll = true
-shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.4
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.03
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.0
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4efw8"]
-shader = ExtResource("13_qsrfj")
-shader_parameter/visible_rows = 0
-shader_parameter/offset = 0.0
-
-[node name="World" type="Node2D"]
-script = ExtResource("1_esyfm")
-
-[node name="FrogPlayer" parent="." instance=ExtResource("2_6tj6i")]
-z_index = 1
-position = Vector2(184, 94)
-
-[node name="Level1" parent="." instance=ExtResource("3_e7v3t")]
-
-[node name="EnemySpawner" type="Node" parent="."]
-script = ExtResource("4_jnwng")
-default_enemy_scene = ExtResource("5_51har")
-mosquito_enemy_scene = ExtResource("6_q7xw0")
-bat_enemy_scene = ExtResource("7_c3ib7")
-
-[node name="DialogueBox" type="Sprite2D" parent="."]
-z_index = 9
-position = Vector2(193, 351)
-texture = ExtResource("8_735by")
-script = ExtResource("9_6n1jc")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
-z_index = 10
-offset_left = -129.0
-offset_top = -26.0
-offset_right = 120.0
-offset_bottom = 27.0
-
-[node name="FemaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("10_rxi85")
-
-[node name="Sprite2D" type="Sprite2D" parent="DialogueBox/FemaleDialogueBox"]
-position = Vector2(-157, 0)
-texture = ExtResource("11_tqp7d")
-
-[node name="MaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("8_735by")
-
-[node name="Sprite2D" type="Sprite2D" parent="DialogueBox/MaleDialogueBox"]
-position = Vector2(160, 0)
-texture = ExtResource("12_d27v5")
-
-[node name="ScreenShader" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_nlt3b")
-offset_left = 1.0
-offset_right = 385.0
-offset_bottom = 384.0
-
-[node name="TransitionShader" type="ColorRect" parent="."]
-z_index = 10
-material = SubResource("ShaderMaterial_4efw8")
-offset_right = 388.0
-offset_bottom = 385.0
-color = Color(0, 0, 0, 0)
+}

@@ -7,7 +7,3 @@ func _ready():
 	var tween = get_tree().create_tween()
 	tween.tween_property(fade_out_white, "color", Color(1,1,1,1), 2.0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-

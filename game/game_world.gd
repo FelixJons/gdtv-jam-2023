@@ -15,6 +15,14 @@ func _ready():
 	enemy_spawner.on_enemies_killed_changed.connect(next_dialogue)
 	get_window().set_content_scale_size(Vector2i(24*16,24*16))
 	
+	
+	# Shader stuff
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_shader_value, 0,150,5)
+	
+func set_shader_value(value: int):
+	$TransitionShader.material.set_shader_parameter("visible_rows", value)
+
 func next_dialogue(number):
 	if number in dialogue_kill_count_triggers:
 		dialogue_box.foo()

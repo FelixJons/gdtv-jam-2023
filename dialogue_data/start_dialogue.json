@@ -28,6 +28,7 @@
 		"type": "statement"
 	},
 	"006": {
-		"type": "breakpoint"
+		"type": "breakpoint",
+		"command": "start_arcade"
 	}
 }

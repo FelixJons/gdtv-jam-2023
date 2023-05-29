@@ -4,6 +4,9 @@ extends Sprite2D
 @onready var answer_box := $AnswersContainer
 @onready var fem_dialogue := $FemaleDialogueBox
 @onready var male_dialogue := $MaleDialogueBox
+@onready var zoom_in_point = $ZoomInPoint
+var fade_out_black 
+
 @export var game_scene: PackedScene
 var dialogue_dict: Dictionary
 var answers_dict: Dictionary
@@ -49,8 +52,13 @@ func set_active_char(char: String) -> void:
 		
 func display_dialogue(dialogue_id: String) -> void:
 	if dialogue_dict[dialogue_id]["type"] == "breakpoint":
-		get_tree().change_scene_to_packed(game_scene)
-		return
+		if dialogue_dict[dialogue_id]["command"] == "start_arcade":
+			fade_out_black = get_node("../FadeInWhite")
+			var tween := get_tree().create_tween()
+			tween.tween_property(fade_out_black, "color", Color(0,0,0,1), 2.0)
+			await get_tree().create_timer(3.0).timeout
+			get_tree().change_scene_to_packed(game_scene)
+			return
 		
 	elif dialogue_dict[dialogue_id]["type"] == "question":
 		is_loading_dialogue = true
