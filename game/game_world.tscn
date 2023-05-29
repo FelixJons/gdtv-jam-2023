@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://d0rlgj3n6frbj"]
+[gd_scene load_steps=24 format=3 uid="uid://d0rlgj3n6frbj"]
 
 [ext_resource type="Script" path="res://game/game_world.gd" id="1_u35l1"]
+[ext_resource type="PackedScene" uid="uid://dd228en1sawln" path="res://game_over_scene.tscn" id="2_4a2ty"]
 [ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_dg306"]
 [ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_ojf3o"]
 [ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_06xsv"]
@@ -305,6 +306,7 @@ shader_parameter/diamondPixelSize = 10.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_u35l1")
+game_over_scene = ExtResource("2_4a2ty")
 
 [node name="FrogPlayer" parent="." instance=ExtResource("2_dg306")]
 z_index = 1

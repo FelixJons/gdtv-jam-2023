@@ -4,6 +4,7 @@ extends Node2D
 @onready var dialogue_box = $DialogueBox
 @onready var press_start_text = $PressStartText
 @onready var frog_player = $FrogPlayer
+@export var game_over_scene: PackedScene
 
 @onready var default_vertical_timer = $DefaultVerticalTimer
 @onready var default_horizontal_timer = $DefaultHorizontalTimer
@@ -76,7 +77,12 @@ func enable_kill_count():
 		mosquito_timer.timeout.connect(enemy_spawner.spawn_mosquitos)
 	else:
 		print("Game ova")
+		WinLoseSingleton.won_the_game = true
 		var tween = get_tree().create_tween()
-		tween.tween_property($GameOverShader.material, "shader_parameter/progress", 1.0, 4)
+		$GameOverShader.z_index = 100
+		tween.tween_property($GameOverShader.material, "shader_parameter/progress", 1.0, 4).finished.connect(switch_to_game_over)
 	is_dialogue_active = false
+	
+func switch_to_game_over():
+	get_tree().change_scene_to_packed(game_over_scene)
 
