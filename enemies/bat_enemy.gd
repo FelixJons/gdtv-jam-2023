@@ -28,9 +28,6 @@ func get_random_direction_in_cone(collision):
 	var new_direction = collision.get_normal().rotated(random_angle)
 	return new_direction.normalized()
 
-
-
-		
 signal on_queue_free_custom()
 	
 func queue_free_custom():

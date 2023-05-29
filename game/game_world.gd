@@ -11,6 +11,7 @@ func _ready():
 	enemy_spawner.set_current_level("Level1")
 	enemy_spawner.spawn()
 	enemy_spawner.spawn_mosquitos()
+	enemy_spawner.spawn_bats()
 	enemy_spawner.on_enemies_killed_changed.connect(next_dialogue)
 	get_window().set_content_scale_size(Vector2i(24*16,24*16))
 	

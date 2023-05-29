@@ -1,21 +1,21 @@
 [gd_scene load_steps=15 format=3 uid="uid://cas4mq43vlnt7"]
 
-[ext_resource type="Texture2D" uid="uid://b07dsdpj5xyhf" path="res://sprites/environment/blocking_element_rock3.png" id="1_eke8u"]
-[ext_resource type="Texture2D" uid="uid://bg47cv3f56vxq" path="res://sprites/environment/blocking_element_water-Sheet.png" id="2_njdpk"]
-[ext_resource type="Texture2D" uid="uid://d4c8y8a3qetxh" path="res://sprites/environment/ground_element_grass.png" id="3_h4uco"]
-[ext_resource type="Texture2D" uid="uid://t8sli486nfuj" path="res://sprites/environment/blocking_element_water_FIXED.png" id="4_eac2y"]
-[ext_resource type="Texture2D" uid="uid://hqllj6xwtkj4" path="res://sprites/environment/blocking_element_corner.png" id="5_eumw8"]
-[ext_resource type="Texture2D" uid="uid://dit07m3lwawpr" path="res://icon.svg" id="6_r2vae"]
+[ext_resource type="Texture2D" uid="uid://b07dsdpj5xyhf" path="res://sprites/environment/blocking_element_rock3.png" id="1_nljyp"]
+[ext_resource type="Texture2D" uid="uid://bg47cv3f56vxq" path="res://sprites/environment/blocking_element_water-Sheet.png" id="2_sm1gy"]
+[ext_resource type="Texture2D" uid="uid://d4c8y8a3qetxh" path="res://sprites/environment/ground_element_grass.png" id="3_f5daw"]
+[ext_resource type="Texture2D" uid="uid://t8sli486nfuj" path="res://sprites/environment/blocking_element_water_FIXED.png" id="4_s343u"]
+[ext_resource type="Texture2D" uid="uid://hqllj6xwtkj4" path="res://sprites/environment/blocking_element_corner.png" id="5_stky2"]
+[ext_resource type="Texture2D" uid="uid://dit07m3lwawpr" path="res://icon.svg" id="6_3wpy2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tw67b"]
-texture = ExtResource("1_eke8u")
+texture = ExtResource("1_nljyp")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jilyi"]
-texture = ExtResource("2_njdpk")
+texture = ExtResource("2_sm1gy")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -51,7 +51,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvakk"]
-texture = ExtResource("3_h4uco")
+texture = ExtResource("3_f5daw")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -59,7 +59,7 @@ texture_region_size = Vector2i(24, 24)
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_uaanb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hcf2c"]
-texture = ExtResource("4_eac2y")
+texture = ExtResource("4_s343u")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -98,7 +98,7 @@ texture_region_size = Vector2i(24, 24)
 8:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qx13"]
-texture = ExtResource("5_eumw8")
+texture = ExtResource("5_stky2")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -114,7 +114,7 @@ texture_region_size = Vector2i(24, 24)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfbnj"]
-texture = ExtResource("6_r2vae")
+texture = ExtResource("6_3wpy2")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -232,3 +232,10 @@ layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(16, 131078, 1, 65552, 131078, 1, 131088, 131078, 1, 196624, 131078, 1, 262160, 131078, 1, 327696, 131078, 1, 393232, 131078, 1, 458768, 131078, 1, 524304, 131078, 1, 589840, 131078, 1, 655376, 131078, 1, 720912, 131078, 1, 786448, 131078, 1, 851984, 131078, 1, 917520, 131078, 1, 983056, 131078, 1, 1048592, 131078, 1, 1048591, 131078, 1, 1048590, 131078, 1, 1048589, 131078, 1, 1048588, 131078, 1, 1048587, 131078, 1, 1048586, 131078, 1, 1048585, 131078, 1, 1048584, 131078, 1, 1048583, 131078, 1, 1048582, 131078, 1, 1048581, 131078, 1, 1048580, 131078, 1, 1048579, 131078, 1, 1048578, 131078, 1, 1048577, 131078, 1, 1048576, 131078, 1, 1114111, 131078, 1, 1048575, 131078, 1, 983039, 131078, 1, 917503, 131078, 1, 851967, 131078, 1, 786431, 131078, 1, 720895, 131078, 1, 655359, 131078, 1, 589823, 131078, 1, 524287, 131078, 1, 458751, 131078, 1, 393215, 131078, 1, 327679, 131078, 1, 262143, 131078, 1, 196607, 131078, 1, 131071, 131078, 1, 65535, 131078, 1, -1, 131078, 1, -65536, 131078, 1, -65535, 131078, 1, -65534, 131078, 1, -65533, 131078, 1, -65532, 131078, 1, -65531, 131078, 1, -65530, 131078, 1, -65529, 131078, 1, -65528, 131078, 1, -65527, 131078, 1, -65526, 131078, 1, -65525, 131078, 1, -65524, 131078, 1, -65523, 131078, 1, -65522, 131078, 1, -65521, 131078, 1, -65520, 131078, 1)
+layer_4/name = "spawnBats"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array(196608, 196612, 0, 262144, 196612, 0, 327680, 196612, 0, 655360, 196612, 0, 720896, 196612, 0, 786432, 196612, 0)

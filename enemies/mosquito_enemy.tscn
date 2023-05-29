@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://erofuuvpsvlx"]
 
-[ext_resource type="Script" path="res://enemies/mosquito_enemy.gd" id="1_eqjes"]
-[ext_resource type="Texture2D" uid="uid://ckv8odx5x87ib" path="res://sprites/enemies/enemy_mosquito.png" id="2_orpim"]
+[ext_resource type="Script" path="res://enemies/mosquito_enemy.gd" id="1_q7yyv"]
+[ext_resource type="Texture2D" uid="uid://ckv8odx5x87ib" path="res://sprites/enemies/enemy_mosquito.png" id="2_nxtm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hit8e"]
 size = Vector2(24, 20)
 
-[node name="Mosquito" type="CharacterBody2D"]
+[node name="Mosquito" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_eqjes")
+script = ExtResource("1_q7yyv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_orpim")
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["enemies"]]
+texture = ExtResource("2_nxtm2")
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
 shape = SubResource("RectangleShape2D_hit8e")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." groups=["enemies"]]

@@ -1,22 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0rlgj3n6frbj"]
+[gd_scene load_steps=15 format=3 uid="uid://d0rlgj3n6frbj"]
 
-[ext_resource type="Script" path="res://game/game_world.gd" id="1_k5l2a"]
-[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_bx6we"]
-[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_yldky"]
-[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_6bf2g"]
-[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_b0pc3"]
-[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue/dialogue_box_overlay2.png" id="6_5srkc"]
-[ext_resource type="Script" path="res://game/ingame_dialogue.gd" id="7_ixu2f"]
-[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="8_xy6i4"]
-[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="9_bb7dr"]
-[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="10_glcyk"]
-[ext_resource type="Shader" path="res://game/game_world.gdshader" id="11_nn4hy"]
-[ext_resource type="PackedScene" uid="uid://fmr5g2onrfkb" path="res://enemies/bat_enemy.tscn" id="12_6kl1u"]
-[ext_resource type="PackedScene" uid="uid://erofuuvpsvlx" path="res://enemies/mosquito_enemy.tscn" id="13_jheof"]
-[ext_resource type="PackedScene" uid="uid://c1fggkvgq57pu" path="res://tv_opening.tscn" id="14_tv11x"]
+[ext_resource type="Script" path="res://game/game_world.gd" id="1_xr35f"]
+[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_oakhh"]
+[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_78f63"]
+[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_r718m"]
+[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_wo4io"]
+[ext_resource type="PackedScene" uid="uid://erofuuvpsvlx" path="res://enemies/mosquito_enemy.tscn" id="6_3b33x"]
+[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue/dialogue_box_overlay2.png" id="7_afl4p"]
+[ext_resource type="Script" path="res://game/ingame_dialogue.gd" id="8_ts2je"]
+[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="9_5jptj"]
+[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="10_1jhi1"]
+[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="11_dkpt5"]
+[ext_resource type="Shader" path="res://game/game_world.gdshader" id="12_2otaq"]
+[ext_resource type="PackedScene" uid="uid://fmr5g2onrfkb" path="res://enemies/bat_enemy.tscn" id="13_gjcvg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlt3b"]
-shader = ExtResource("11_nn4hy")
+shader = ExtResource("12_2otaq")
 shader_parameter/grain_amount = 0.0
 shader_parameter/scanline_amount = 0.095
 shader_parameter/scanline_speed = 0.05
@@ -24,24 +23,25 @@ shader_parameter/greyness = 0.0
 shader_parameter/resolution = Vector2(384, 384)
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_k5l2a")
+script = ExtResource("1_xr35f")
 
-[node name="FrogPlayer" parent="." instance=ExtResource("2_bx6we")]
+[node name="FrogPlayer" parent="." instance=ExtResource("2_oakhh")]
 z_index = 1
 position = Vector2(184, 94)
 
-[node name="Level1" parent="." instance=ExtResource("3_yldky")]
+[node name="Level1" parent="." instance=ExtResource("3_78f63")]
 
 [node name="EnemySpawner" type="Node" parent="."]
-script = ExtResource("4_6bf2g")
-default_enemy_scene = ExtResource("5_b0pc3")
-mosquito_enemy_scene = ExtResource("13_jheof")
+script = ExtResource("4_r718m")
+default_enemy_scene = ExtResource("5_wo4io")
+mosquito_enemy_scene = ExtResource("6_3b33x")
+bat_enemy_scene = ExtResource("13_gjcvg")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(193, 351)
-texture = ExtResource("6_5srkc")
-script = ExtResource("7_ixu2f")
+texture = ExtResource("7_afl4p")
+script = ExtResource("8_ts2je")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
 z_index = 10
@@ -51,27 +51,25 @@ offset_right = 120.0
 offset_bottom = 27.0
 
 [node name="FemaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("8_xy6i4")
+texture = ExtResource("9_5jptj")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/FemaleDialogueBox"]
 position = Vector2(-157, 0)
-texture = ExtResource("9_bb7dr")
+texture = ExtResource("10_1jhi1")
 
 [node name="MaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("6_5srkc")
+texture = ExtResource("7_afl4p")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/MaleDialogueBox"]
 position = Vector2(160, 0)
-texture = ExtResource("10_glcyk")
+texture = ExtResource("11_dkpt5")
 
-[node name="Shader (MAYBE?)" type="ColorRect" parent="."]
+[node name="ScreenShader" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_nlt3b")
 offset_left = 1.0
 offset_right = 385.0
 offset_bottom = 384.0
 
-[node name="Bat" parent="." instance=ExtResource("12_6kl1u")]
+[node name="Bat" parent="." instance=ExtResource("13_gjcvg")]
 position = Vector2(124, 170)
-
-[node name="ColorRect" parent="." instance=ExtResource("14_tv11x")]
