@@ -32,6 +32,8 @@ func _ready():
 	display_dialogue(current_dialogue_id)
 	
 func _process(delta):
+	if visible == false:
+		return
 	if not is_loading_dialogue and Input.is_action_just_pressed("item"):
 		if game_over_by_dialogue == true:
 			display_failed_response()
@@ -50,6 +52,8 @@ func set_active_char(char: String) -> void:
 		fem_dialogue.visible = false
 		male_dialogue.visible = true
 		
+signal start_game_signal
+		
 func display_dialogue(dialogue_id: String) -> void:
 	if dialogue_dict[dialogue_id]["type"] == "breakpoint":
 		if dialogue_dict[dialogue_id]["command"] == "start_arcade":
@@ -59,7 +63,11 @@ func display_dialogue(dialogue_id: String) -> void:
 			await get_tree().create_timer(3.0).timeout
 			get_tree().change_scene_to_packed(game_scene)
 			return
-		
+		elif dialogue_dict[dialogue_id]["command"] == "start_game":
+			start_game_signal.emit()
+			visible = false
+			is_loading_dialogue = false
+			
 	elif dialogue_dict[dialogue_id]["type"] == "question":
 		is_loading_dialogue = true
 		set_active_char(dialogue_dict[dialogue_id]["char"])

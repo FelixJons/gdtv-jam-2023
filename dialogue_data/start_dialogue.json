@@ -15,7 +15,7 @@
 		"type": "question",
 		"answers": ["001","002"],
 		"correct_answer": "001",
-		"failed_response": "Well geeeetouta here then! Sho!"
+		"failed_response": "GETOUTA HERE"
 	},
 	"004": {
 		"char": "male_duck",

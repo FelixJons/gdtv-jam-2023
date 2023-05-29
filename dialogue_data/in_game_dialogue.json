@@ -9,6 +9,16 @@
 		"text": "Have you played it before?",
 		"type": "question",
         "answers": ["001","002"],
-        "correct_answer": "all"
+        "correct_answer": "all",
+        "failed_response": "NULL"
+	},
+    "003": {
+        "char": "male_duck",
+		"text": "Hm, alrite! Lets go!",
+		"type": "statement"
+    },
+	"004": {
+		"type": "breakpoint",
+		"command": "start_game"
 	}
 }		
