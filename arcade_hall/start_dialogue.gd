@@ -31,6 +31,10 @@ func _ready():
 	# First dialogue step
 	display_dialogue(current_dialogue_id)
 	
+func step_dialogue_from_in_game():
+	visible = true
+	dialogue_step()
+	
 func _process(delta):
 	if visible == false:
 		return
@@ -53,6 +57,7 @@ func set_active_char(char: String) -> void:
 		male_dialogue.visible = true
 		
 signal start_game_signal
+signal dialogue_off_signal
 		
 func display_dialogue(dialogue_id: String) -> void:
 	if dialogue_dict[dialogue_id]["type"] == "breakpoint":
@@ -65,6 +70,10 @@ func display_dialogue(dialogue_id: String) -> void:
 			return
 		elif dialogue_dict[dialogue_id]["command"] == "start_game":
 			start_game_signal.emit()
+			visible = false
+			is_loading_dialogue = false
+		elif dialogue_dict[dialogue_id]["command"] == "dialogue_window_off":
+			dialogue_off_signal.emit()
 			visible = false
 			is_loading_dialogue = false
 			

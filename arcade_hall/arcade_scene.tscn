@@ -90,5 +90,4 @@ script = ExtResource("11_n5tls")
 position = Vector2(100, -92)
 
 [node name="FadeInWhite" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)

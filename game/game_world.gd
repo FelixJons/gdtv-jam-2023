@@ -19,6 +19,7 @@ func _ready():
 	get_window().set_content_scale_size(Vector2i(24*16,24*16))
 	
 	dialogue_box.start_game_signal.connect(set_start_dialogue_to_finished)
+	dialogue_box.dialogue_off_signal.connect(enable_kill_count)
 	
 	# Shader stuff
 	var tween = get_tree().create_tween()
@@ -28,9 +29,11 @@ func incremenent_kill_count(count: int):
 	if not is_dialogue_active:
 		enemy_kill_count += count
 		if enemy_kill_count in dialogue_kill_count_triggers:
-			dialogue_box.visible = true
+			dialogue_box.step_dialogue_from_in_game()
+			is_dialogue_active = true
 		
 func _process(delta):
+	print(enemy_kill_count)
 	if is_game_running:
 		return
 	if is_start_dialogue_finished and Input.is_action_just_pressed("item"):
@@ -58,3 +61,6 @@ func spawn_enemies():
 	
 func set_start_dialogue_to_finished():
 	is_start_dialogue_finished = true
+
+func enable_kill_count():
+	is_dialogue_active = false

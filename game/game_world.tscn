@@ -365,6 +365,7 @@ meta_underlined = false
 script = ExtResource("15_1n78k")
 
 [node name="ScreenShader" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 material = SubResource("ShaderMaterial_nlt3b")
 offset_left = 1.0
@@ -380,6 +381,7 @@ offset_bottom = 106.0
 text = "PRESS START"
 
 [node name="TransitionShader" type="ColorRect" parent="."]
+visible = false
 z_index = 10
 material = SubResource("ShaderMaterial_4efw8")
 offset_right = 388.0

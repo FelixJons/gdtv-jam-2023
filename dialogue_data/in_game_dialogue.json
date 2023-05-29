@@ -20,5 +20,27 @@
 	"004": {
 		"type": "breakpoint",
 		"command": "start_game"
+	},
+    "005": {
+		"char": "male_duck",
+		"text": "Wow, your not so bad!",
+        "type": "statement"
+	},
+    "006": {
+		"char": "male_duck",
+		"text": "Do you like the game so far?",
+        "type": "question",
+        "answers": ["001","002"],
+        "correct_answer": "001",
+        "failed_response": "WELL NOBODY IS FORCING YOU TO PLAY THIS GAME SO GETTTTOUTA HERE YALL!!!"
+	},
+    "007": {
+        "char": "male_duck",
+		"text": "Nice, me too! This is my favourite game!",
+		"type": "statement"
+    },
+    "008": {
+		"type": "breakpoint",
+		"command": "dialogue_window_off"
 	}
 }		
