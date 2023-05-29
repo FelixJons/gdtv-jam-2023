@@ -42,9 +42,8 @@ func _physics_process(delta):
 		var col := get_slide_collision(index)
 		var body := col.get_collider()
 		if body.is_in_group("enemies"):
-			#frog_died_signal.emit()
-			#queue_free()
-			pass
+			frog_died_signal.emit()
+			queue_free()
 			
 			
 	updateanimation()

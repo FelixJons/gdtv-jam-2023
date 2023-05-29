@@ -10,7 +10,7 @@ var fade_out_black
 @export var game_scene: PackedScene
 var dialogue_dict: Dictionary
 var answers_dict: Dictionary
-var text_speed: float = 0.001
+var text_speed: float = 0.02
 var answer_delay: float = 1.0
 var is_loading_dialogue = false
 var current_dialogue_id = "001"

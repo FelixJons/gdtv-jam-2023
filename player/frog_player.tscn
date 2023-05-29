@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://c5268qs30tppm"]
 
-[ext_resource type="Script" path="res://player/frog_player.gd" id="1_tf7gg"]
-[ext_resource type="PackedScene" uid="uid://wdubw62p16x7" path="res://enemies/bullet.tscn" id="2_6i1jh"]
-[ext_resource type="Texture2D" uid="uid://dc022le5327fp" path="res://sprites/frog/player_walking_animation.png" id="3_vf48n"]
+[ext_resource type="Script" path="res://player/frog_player.gd" id="1_kh084"]
+[ext_resource type="PackedScene" uid="uid://wdubw62p16x7" path="res://enemies/bullet.tscn" id="2_w82hc"]
+[ext_resource type="Texture2D" uid="uid://dc022le5327fp" path="res://sprites/frog/player_walking_animation.png" id="3_8704o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h618r"]
 size = Vector2(16, 16)
@@ -76,24 +76,6 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0), Vector2i(1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_y43k0"]
-resource_name = "walkUp"
-length = 0.4
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(6, 0), Vector2i(7, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_4t78f"]
 resource_name = "walkStill"
 length = 0.2
@@ -112,6 +94,24 @@ tracks/0/keys = {
 "values": [Vector2i(10, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_y43k0"]
+resource_name = "walkUp"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(6, 0), Vector2i(7, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pwn5o"]
 _data = {
 "RESET": SubResource("Animation_n67ae"),
@@ -123,11 +123,13 @@ _data = {
 }
 
 [node name="FrogPlayer" type="CharacterBody2D"]
-script = ExtResource("1_tf7gg")
-bullet_scene = ExtResource("2_6i1jh")
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_kh084")
+bullet_scene = ExtResource("2_w82hc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_vf48n")
+texture = ExtResource("3_8704o")
 hframes = 12
 frame = 10
 
