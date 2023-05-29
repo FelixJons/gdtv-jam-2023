@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="10_rxi85"]
 [ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="11_tqp7d"]
 [ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="12_d27v5"]
-[ext_resource type="Shader" path="res://game/game_world_transition_shader.gdshader" id="13_qsrfj"]
+[ext_resource type="Shader" path="res://shaders/game_world_transition_shader.gdshader" id="13_jdjuh"]
 
 [sub_resource type="Shader" id="Shader_ip3nw"]
 code = "/*
@@ -272,7 +272,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4efw8"]
-shader = ExtResource("13_qsrfj")
+shader = ExtResource("13_jdjuh")
 shader_parameter/visible_rows = 0
 shader_parameter/offset = 0.0
 
