@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2ctdbl6sent7"]
+[gd_scene load_steps=3 format=3 uid="uid://d2ctdbl6sent7"]
 
 [ext_resource type="Script" path="res://blinking_text_script.gd" id="1_glotj"]
+[ext_resource type="FontFile" uid="uid://dvfag37de6n4k" path="res://fonts/upheavtt.ttf" id="1_sbftj"]
 
 [node name="BlinkingText" type="Label"]
+theme_override_fonts/font = ExtResource("1_sbftj")
+theme_override_font_sizes/font_size = 24
 text = "TEST TEXT"
 script = ExtResource("1_glotj")

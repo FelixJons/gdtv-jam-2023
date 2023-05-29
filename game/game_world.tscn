@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0rlgj3n6frbj"]
+[gd_scene load_steps=18 format=3 uid="uid://d0rlgj3n6frbj"]
 
 [ext_resource type="Script" path="res://game/game_world.gd" id="1_esyfm"]
 [ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_6tj6i"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="11_tqp7d"]
 [ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="12_d27v5"]
 [ext_resource type="Shader" path="res://shaders/game_world_transition_shader.gdshader" id="13_jdjuh"]
+[ext_resource type="PackedScene" uid="uid://d2ctdbl6sent7" path="res://blinking_text.tscn" id="14_rtt8b"]
 
 [sub_resource type="Shader" id="Shader_ip3nw"]
 code = "/*
@@ -281,7 +282,7 @@ script = ExtResource("1_esyfm")
 
 [node name="FrogPlayer" parent="." instance=ExtResource("2_6tj6i")]
 z_index = 1
-position = Vector2(184, 94)
+position = Vector2(184, 134)
 
 [node name="Level1" parent="." instance=ExtResource("3_e7v3t")]
 
@@ -331,3 +332,10 @@ material = SubResource("ShaderMaterial_4efw8")
 offset_right = 388.0
 offset_bottom = 385.0
 color = Color(0, 0, 0, 0)
+
+[node name="PressStartText" parent="." instance=ExtResource("14_rtt8b")]
+offset_left = 117.0
+offset_top = 81.0
+offset_right = 263.0
+offset_bottom = 106.0
+text = "PRESS START"
