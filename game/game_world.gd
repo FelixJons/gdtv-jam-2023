@@ -6,14 +6,16 @@ extends Node2D
 @onready var press_start_text = $PressStartText
 @onready var frog_player = $FrogPlayer
 
+var enemy_kill_count = 0
 var dialogue_kill_count_triggers = [3,6]
 var is_start_dialogue_finished = false
 var is_game_running = false
+var is_dialogue_active = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enemy_spawner.set_current_level("Level1")
-	enemy_spawner.on_enemies_killed_changed.connect(next_dialogue)
+	enemy_spawner.on_enemies_killed_changed.connect(incremenent_kill_count)
 	get_window().set_content_scale_size(Vector2i(24*16,24*16))
 	
 	dialogue_box.start_game_signal.connect(set_start_dialogue_to_finished)
@@ -22,6 +24,12 @@ func _ready():
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_shader_value, 0,75,3).finished.connect(start_dialogue)
 	
+func incremenent_kill_count(count: int):
+	if not is_dialogue_active:
+		enemy_kill_count += count
+		if enemy_kill_count in dialogue_kill_count_triggers:
+			dialogue_box.visible = true
+		
 func _process(delta):
 	if is_game_running:
 		return
@@ -34,10 +42,6 @@ func _process(delta):
 func set_shader_value(value: int):
 	$TransitionShader.material.set_shader_parameter("visible_rows", value)
 
-func next_dialogue(number):
-	if number in dialogue_kill_count_triggers:
-		print("next dialogue")
-	
 func start_dialogue():
 	$TransitionShader.queue_free()
 	dialogue_box.visible = true

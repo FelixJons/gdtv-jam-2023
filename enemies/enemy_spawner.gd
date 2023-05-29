@@ -11,8 +11,6 @@ const TILE_SIZE = 24
 var player 
 var astar_grid_node
 
-var enemies_killed = 0
-
 const SpawnOrigin = {
 	HORIZONTAL = 1,
 	VERTICAL = 2,
@@ -60,5 +58,4 @@ func spawn_bats():
 signal on_enemies_killed_changed(number_of_killed_enemies)
 
 func increment_enemies_killed_by_one():
-	enemies_killed += 1
-	on_enemies_killed_changed.emit(enemies_killed)
+	on_enemies_killed_changed.emit(1)
