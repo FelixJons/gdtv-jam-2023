@@ -15,12 +15,14 @@ var current_right_answer_id: String
 var is_waiting_for_answer = false
 var current_fail_answer_response: String
 
+@export var is_in_game: bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fem_dialogue.visible = false
 	male_dialogue.visible = false
 	
-	dialogue_dict = Dialogue.start_dialogue_dict
+	dialogue_dict = Dialogue.start_dialogue_dict if not is_in_game else Dialogue.in_game_dialogue_dict
 	answers_dict = Dialogue.answer_dialogue_dict
 	answer_box.answer_signal.connect(answer_recieved)
 	# First dialogue step
@@ -103,7 +105,7 @@ func answer_recieved(id: String, full_answer):
 	text_box.visible = true
 	display_full_answer(full_answer)
 	
-	if id == current_right_answer_id:
+	if id == current_right_answer_id or current_right_answer_id == "all":
 		game_over_by_dialogue = false
 	else:
 		game_over_by_dialogue = true
@@ -126,8 +128,4 @@ func display_failed_response():
 	for char in current_fail_answer_response:
 		text_box.add_text(char)
 		await get_tree().create_timer(text_speed).timeout
-	
-	
-		
-		
-	
+

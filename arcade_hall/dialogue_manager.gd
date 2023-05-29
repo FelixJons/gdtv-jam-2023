@@ -1,14 +1,17 @@
 extends Node
 
 var start_dialogue_file_path = "res://dialogue_data/start_dialogue.json"
+var in_game_dialogue_file_path = "res://dialogue_data/in_game_dialogue.json"
 var answer_dialogue_file_path = "res://dialogue_data/answers.json"
 var start_dialogue_dict: Dictionary
+var in_game_dialogue_dict: Dictionary
 var answer_dialogue_dict: Dictionary
 
 func _ready():
 	start_dialogue_dict = load_json_dialogue(start_dialogue_file_path)
+	in_game_dialogue_dict = load_json_dialogue(in_game_dialogue_file_path)
 	answer_dialogue_dict = load_json_dialogue(answer_dialogue_file_path)
-
+	
 func load_json_dialogue(file_path) -> Dictionary:
 	var json_as_dict
 	if FileAccess.file_exists(file_path):

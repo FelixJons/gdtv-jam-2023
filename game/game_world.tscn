@@ -38,7 +38,7 @@ mosquito_enemy_scene = ExtResource("6_3b33x")
 bat_enemy_scene = ExtResource("13_gjcvg")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
-visible = false
+z_index = 100
 position = Vector2(193, 351)
 texture = ExtResource("7_afl4p")
 script = ExtResource("8_ts2je")
@@ -70,6 +70,3 @@ material = SubResource("ShaderMaterial_nlt3b")
 offset_left = 1.0
 offset_right = 385.0
 offset_bottom = 384.0
-
-[node name="Bat" parent="." instance=ExtResource("13_gjcvg")]
-position = Vector2(124, 170)

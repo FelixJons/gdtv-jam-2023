@@ -1,0 +1,14 @@
+{
+	"001": {
+		"char": "male_duck",
+		"text": "So this is the game!",
+		"type": "statement"
+	},
+    "002": {
+		"char": "male_duck",
+		"text": "Have you played it before?",
+		"type": "question",
+        "answers": ["001","002"],
+        "correct_answer": "all"
+	}
+}		
