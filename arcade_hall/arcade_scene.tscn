@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://s334ukp7rbmp"]
+[gd_scene load_steps=14 format=3 uid="uid://s334ukp7rbmp"]
 
 [ext_resource type="Script" path="res://arcade_hall/arcade_scene.gd" id="1_80me0"]
 [ext_resource type="Texture2D" uid="uid://c6y8ffufl3m4p" path="res://sprites/backgrounds/400x240_arcade_hall_no_ducks.png" id="2_xinu1"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="9_octu5"]
 [ext_resource type="Script" path="res://arcade_hall/answer_manager.gd" id="10_vhs4i"]
 [ext_resource type="Script" path="res://arcade_hall/rich_text_label.gd" id="11_5iriu"]
+[ext_resource type="Texture2D" uid="uid://oxwl4pypgp5w" path="res://sprites/backgrounds/date_duck.png" id="12_il1ua"]
+[ext_resource type="Texture2D" uid="uid://bjptb0ep7s6fm" path="res://sprites/backgrounds/gamer_duck.png" id="13_q5fi5"]
 
 [node name="ArcadeScene" type="Node2D"]
 script = ExtResource("1_80me0")
@@ -90,4 +92,13 @@ script = ExtResource("11_5iriu")
 position = Vector2(100, -92)
 
 [node name="FadeInWhite" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="DateDuck" type="Sprite2D" parent="."]
+position = Vector2(273, 201)
+texture = ExtResource("12_il1ua")
+
+[node name="GamerDuck" type="Sprite2D" parent="."]
+position = Vector2(306, 201)
+texture = ExtResource("13_q5fi5")

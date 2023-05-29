@@ -35,7 +35,11 @@ func step_dialogue_from_in_game():
 	visible = true
 	dialogue_step()
 	
+var input_lock = false
+	
 func _process(delta):
+	if input_lock:
+		return
 	if is_loading_dialogue:
 		return
 	if visible == false:
@@ -157,6 +161,16 @@ func display_failed_response():
 	set_active_char("male_duck")
 	for char in current_fail_answer_response:
 		text_box.add_text(char)
-		await get_tree().create_timer(text_speed).timeout
+		await get_tree().create_timer(text_speed).timeout.connect(game_over)
+		
+
+signal game_over_by_dialogue_signal(has_won)
+	
+func game_over():
+	input_lock = true
+	await get_tree().create_timer(2).timeout
+	game_over_by_dialogue_signal.emit(false)
+	
+	
 		
 

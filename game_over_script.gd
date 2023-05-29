@@ -9,8 +9,3 @@ func _ready():
 		$BlinkingText.text = "You won! <3"
 	else:
 		$BlinkingText.text = "You lost! </3"
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

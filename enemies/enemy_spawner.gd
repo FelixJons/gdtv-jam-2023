@@ -33,6 +33,8 @@ func set_current_level(level_name: String):
 	bat_spawn_points = current_level.get_used_cells_by_id(SpawnOrigin.BAT)
 	
 func spawn_default_vertical():
+	if player == null:
+		return
 	for spawn_point in vertical_spawn_points:
 		var enemy = default_enemy_scene.instantiate()
 		enemy.setup(player)
@@ -41,6 +43,8 @@ func spawn_default_vertical():
 		enemy.on_queue_free_custom.connect(increment_enemies_killed_by_one)
 	
 func spawn_default_horizontal():
+	if player == null:
+		return
 	for spawn_point in horizontal_spawn_points:
 		var enemy = default_enemy_scene.instantiate()
 		enemy.setup(player)
@@ -49,12 +53,16 @@ func spawn_default_horizontal():
 		enemy.on_queue_free_custom.connect(increment_enemies_killed_by_one)
 
 func spawn_mosquitos():
+	if player == null:
+		return
 	var enemy = mosquito_enemy_scene.instantiate()
 	enemy.setup(player, mosquito_spawn_points)
 	add_child(enemy)
 	enemy.on_queue_free_custom.connect(increment_enemies_killed_by_one)
 		
 func spawn_bats():
+	if player == null:
+		return
 	var enemy = bat_enemy_scene.instantiate()
 	enemy.setup(player)
 	var random_cell = bat_spawn_points[randi() % bat_spawn_points.size()]

@@ -22,8 +22,8 @@ theme_override_font_sizes/font_size = 50
 text = "GAME OVER"
 
 [node name="BlinkingText" parent="." instance=ExtResource("2_qhblf")]
-offset_left = 136.0
-offset_top = 125.0
-offset_right = 266.0
-offset_bottom = 150.0
+offset_left = 122.0
+offset_top = 129.0
+offset_right = 252.0
+offset_bottom = 154.0
 text = ""

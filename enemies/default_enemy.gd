@@ -41,6 +41,8 @@ func set_movement_target(movement_target: Vector2):
 
 # Physics process function
 func _physics_process(delta: float):
+	if player == null:
+		return
 	set_movement_target(player.global_position)
 	stored_delta = delta
 	

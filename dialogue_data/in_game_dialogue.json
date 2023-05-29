@@ -9,8 +9,8 @@
 		"text": "Have you played it before?",
 		"type": "question",
         "answers": ["001","002"],
-        "correct_answer": "all",
-        "failed_response": "NULL"
+        "correct_answer": "001",
+        "failed_response": "NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
 	},
     "003": {
         "char": "male_duck",

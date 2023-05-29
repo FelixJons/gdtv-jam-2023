@@ -12,7 +12,7 @@ extends Node2D
 @onready var bat_timer = $BatTimer
 
 var enemy_kill_count = 0
-var dialogue_kill_count_triggers = [3,6,9]
+var dialogue_kill_count_triggers = [10,20,30]
 var is_start_dialogue_finished = false
 var is_game_running = false
 var is_dialogue_active = false
@@ -23,13 +23,18 @@ func _ready():
 	enemy_spawner.on_enemies_killed_changed.connect(incremenent_kill_count)
 	get_window().set_content_scale_size(Vector2i(24*16,24*16))
 	
+	
+	frog_player.frog_died_signal.connect(on_frog_died)
 	dialogue_box.start_game_signal.connect(set_start_dialogue_to_finished)
 	dialogue_box.dialogue_off_signal.connect(enable_kill_count)
-	
+	dialogue_box.game_over_by_dialogue_signal.connect(game_over_tween)
 	# Shader stuff
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_shader_value, 0,75,3).finished.connect(start_dialogue)
 	
+func on_frog_died():
+	game_over_tween(false)
+
 func incremenent_kill_count(count: int):
 	if not is_dialogue_active:
 		enemy_kill_count += count
@@ -77,11 +82,14 @@ func enable_kill_count():
 		mosquito_timer.timeout.connect(enemy_spawner.spawn_mosquitos)
 	else:
 		print("Game ova")
-		WinLoseSingleton.won_the_game = true
-		var tween = get_tree().create_tween()
-		$GameOverShader.z_index = 100
-		tween.tween_property($GameOverShader.material, "shader_parameter/progress", 1.0, 4).finished.connect(switch_to_game_over)
+		game_over_tween(true)
 	is_dialogue_active = false
+	
+func game_over_tween(player_has_won):
+	WinLoseSingleton.won_the_game = player_has_won
+	var tween = get_tree().create_tween()
+	$GameOverShader.z_index = 100
+	tween.tween_property($GameOverShader.material, "shader_parameter/progress", 1.0, 4).finished.connect(switch_to_game_over)
 	
 func switch_to_game_over():
 	get_tree().change_scene_to_packed(game_over_scene)

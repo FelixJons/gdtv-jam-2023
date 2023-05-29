@@ -30,6 +30,8 @@ func _process(delta):
 	if fire_direction != Vector2.ZERO:
 		fire()
 
+signal frog_died_signal
+
 func _physics_process(delta):
 	if not is_active:
 		return
@@ -40,7 +42,9 @@ func _physics_process(delta):
 		var col := get_slide_collision(index)
 		var body := col.get_collider()
 		if body.is_in_group("enemies"):
-			body.queue_free()
+			frog_died_signal.emit()
+			queue_free()
+			
 			
 	updateanimation()
 
