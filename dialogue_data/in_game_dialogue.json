@@ -42,5 +42,28 @@
     "008": {
 		"type": "breakpoint",
 		"command": "dialogue_window_off"
+	},
+    "009": {
+		"char": "male_duck",
+		"text": "So how about Ed Sheeran huh? Whata guy!",
+        "type": "statement"
+	},
+    "010": {
+		"char": "male_duck",
+		"text": "Do you like his music?",
+        "type": "question",
+        "answers": ["003","004"],
+        "correct_answer": "004",
+        "failed_response": "Criiiinge!!!"
+	},
+    "011": {
+        "char": "male_duck",
+		"text": "Ye, u preachin to the church gurl!",
+		"type": "statement"
+    },
+    "012": {
+		"type": "breakpoint",
+		"command": "dialogue_window_off"
 	}
+
 }		

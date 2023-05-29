@@ -36,6 +36,8 @@ func step_dialogue_from_in_game():
 	dialogue_step()
 	
 func _process(delta):
+	if is_loading_dialogue:
+		return
 	if visible == false:
 		return
 	if not is_loading_dialogue and Input.is_action_just_pressed("item"):
@@ -60,6 +62,7 @@ signal start_game_signal
 signal dialogue_off_signal
 		
 func display_dialogue(dialogue_id: String) -> void:
+	is_loading_dialogue = true
 	if dialogue_dict[dialogue_id]["type"] == "breakpoint":
 		if dialogue_dict[dialogue_id]["command"] == "start_arcade":
 			fade_out_black = get_node("../FadeInWhite")
@@ -97,6 +100,7 @@ func display_dialogue(dialogue_id: String) -> void:
 		answer_box.set_answers(answers_array)
 		text_box.visible = false
 		answer_box.visible = true
+		
 
 	else:
 		is_loading_dialogue = true
@@ -135,16 +139,19 @@ func answer_recieved(id: String, full_answer):
 	else:
 		game_over_by_dialogue = true
 	
-	is_loading_dialogue = false
 
 
 func display_full_answer(full_answer):
+	is_loading_dialogue = true
 	text_box.clear()
 	set_active_char("female_duck")
 	
 	for char in full_answer:
 		text_box.add_text(char)
 		await get_tree().create_timer(text_speed).timeout
+		
+	is_loading_dialogue = false
+	
 
 
 func display_failed_response():

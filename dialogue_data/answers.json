@@ -1,10 +1,18 @@
 {
 	"001": {
         "short_text": "1. y",
-		"text": "Yes!"
+		"text": "Yessssssssssssssssssssssssssssssssss!"
 	},
     "002": {
         "short_text": "2. n",
         "text": "No!"
+    },
+    "003": {
+        "short_text": "1. Yes!",
+		"text": "Yes! I went to his concert yesterday actually! Whata guy huh?"
+	},
+    "004": {
+        "short_text": "2. No!",
+        "text": "No! I possess more than three brain cells, which enables me to succintly categorize his music as trash."
     }
 }

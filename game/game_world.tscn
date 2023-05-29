@@ -1,22 +1,22 @@
 [gd_scene load_steps=21 format=3 uid="uid://d0rlgj3n6frbj"]
 
-[ext_resource type="Script" path="res://game/game_world.gd" id="1_esyfm"]
-[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_6tj6i"]
-[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_e7v3t"]
-[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_jnwng"]
-[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_51har"]
-[ext_resource type="PackedScene" uid="uid://erofuuvpsvlx" path="res://enemies/mosquito_enemy.tscn" id="6_q7xw0"]
-[ext_resource type="PackedScene" uid="uid://fmr5g2onrfkb" path="res://enemies/bat_enemy.tscn" id="7_c3ib7"]
-[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue/dialogue_box_overlay2.png" id="8_735by"]
-[ext_resource type="Script" path="res://arcade_hall/start_dialogue.gd" id="9_h6djj"]
-[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="10_rxi85"]
-[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="11_tqp7d"]
-[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="12_d27v5"]
-[ext_resource type="Script" path="res://arcade_hall/answer_manager.gd" id="13_7spss"]
-[ext_resource type="Shader" path="res://shaders/game_world_transition_shader.gdshader" id="13_jdjuh"]
-[ext_resource type="FontFile" uid="uid://dvfag37de6n4k" path="res://fonts/upheavtt.ttf" id="14_41q1i"]
-[ext_resource type="PackedScene" uid="uid://d2ctdbl6sent7" path="res://blinking_text.tscn" id="14_rtt8b"]
-[ext_resource type="Script" path="res://arcade_hall/rich_text_label.gd" id="15_1n78k"]
+[ext_resource type="Script" path="res://game/game_world.gd" id="1_u35l1"]
+[ext_resource type="PackedScene" uid="uid://c5268qs30tppm" path="res://player/frog_player.tscn" id="2_dg306"]
+[ext_resource type="PackedScene" uid="uid://cas4mq43vlnt7" path="res://game/level_1.tscn" id="3_ojf3o"]
+[ext_resource type="Script" path="res://enemies/enemy_spawner.gd" id="4_06xsv"]
+[ext_resource type="PackedScene" uid="uid://cdfv1c8teivuu" path="res://enemies/default_enemy.tscn" id="5_sty1u"]
+[ext_resource type="PackedScene" uid="uid://erofuuvpsvlx" path="res://enemies/mosquito_enemy.tscn" id="6_rbp4q"]
+[ext_resource type="PackedScene" uid="uid://fmr5g2onrfkb" path="res://enemies/bat_enemy.tscn" id="7_3h4yj"]
+[ext_resource type="Texture2D" uid="uid://0k83ib72uidj" path="res://sprites/dialogue/dialogue_box_overlay2.png" id="8_llksl"]
+[ext_resource type="Script" path="res://arcade_hall/start_dialogue.gd" id="9_87kdm"]
+[ext_resource type="FontFile" uid="uid://dvfag37de6n4k" path="res://fonts/upheavtt.ttf" id="10_ekhtl"]
+[ext_resource type="Texture2D" uid="uid://6n7x400ce5vw" path="res://sprites/dialogue/dialogue_box_overlay1.png" id="11_3s75b"]
+[ext_resource type="Texture2D" uid="uid://baaykaesbk81j" path="res://sprites/dialogue/date_duck_dialogue.png" id="12_5e7oe"]
+[ext_resource type="Texture2D" uid="uid://doyto3d510xcx" path="res://sprites/dialogue/gamer_duck_dialogue.png" id="13_dafby"]
+[ext_resource type="Script" path="res://arcade_hall/answer_manager.gd" id="14_q20oy"]
+[ext_resource type="Script" path="res://arcade_hall/rich_text_label.gd" id="15_xeokh"]
+[ext_resource type="PackedScene" uid="uid://d2ctdbl6sent7" path="res://blinking_text.tscn" id="16_ub314"]
+[ext_resource type="Shader" path="res://shaders/game_world_transition_shader.gdshader" id="17_dp7f2"]
 
 [sub_resource type="Shader" id="Shader_ip3nw"]
 code = "/*
@@ -276,31 +276,31 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4efw8"]
-shader = ExtResource("13_jdjuh")
+shader = ExtResource("17_dp7f2")
 shader_parameter/visible_rows = 0
 shader_parameter/offset = 0.0
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_esyfm")
+script = ExtResource("1_u35l1")
 
-[node name="FrogPlayer" parent="." instance=ExtResource("2_6tj6i")]
+[node name="FrogPlayer" parent="." instance=ExtResource("2_dg306")]
 z_index = 1
 position = Vector2(184, 134)
 
-[node name="Level1" parent="." instance=ExtResource("3_e7v3t")]
+[node name="Level1" parent="." instance=ExtResource("3_ojf3o")]
 
 [node name="EnemySpawner" type="Node" parent="."]
-script = ExtResource("4_jnwng")
-default_enemy_scene = ExtResource("5_51har")
-mosquito_enemy_scene = ExtResource("6_q7xw0")
-bat_enemy_scene = ExtResource("7_c3ib7")
+script = ExtResource("4_06xsv")
+default_enemy_scene = ExtResource("5_sty1u")
+mosquito_enemy_scene = ExtResource("6_rbp4q")
+bat_enemy_scene = ExtResource("7_3h4yj")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
 visible = false
 z_index = 9
 position = Vector2(193, 351)
-texture = ExtResource("8_735by")
-script = ExtResource("9_h6djj")
+texture = ExtResource("8_llksl")
+script = ExtResource("9_87kdm")
 is_in_game = true
 
 [node name="DialogueText" type="RichTextLabel" parent="DialogueBox"]
@@ -309,22 +309,22 @@ offset_left = -122.0
 offset_top = -26.0
 offset_right = 120.0
 offset_bottom = 27.0
-theme_override_fonts/normal_font = ExtResource("14_41q1i")
+theme_override_fonts/normal_font = ExtResource("10_ekhtl")
 theme_override_font_sizes/normal_font_size = 14
 
 [node name="FemaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("10_rxi85")
+texture = ExtResource("11_3s75b")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/FemaleDialogueBox"]
 position = Vector2(-157, 0)
-texture = ExtResource("11_tqp7d")
+texture = ExtResource("12_5e7oe")
 
 [node name="MaleDialogueBox" type="Sprite2D" parent="DialogueBox"]
-texture = ExtResource("8_735by")
+texture = ExtResource("8_llksl")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueBox/MaleDialogueBox"]
 position = Vector2(160, 0)
-texture = ExtResource("12_d27v5")
+texture = ExtResource("13_dafby")
 
 [node name="AnswersContainer" type="BoxContainer" parent="DialogueBox" node_paths=PackedStringArray("answer_label_1", "answer_label_2", "answer_label_3")]
 offset_left = -122.0
@@ -332,37 +332,37 @@ offset_top = -29.0
 offset_right = 133.0
 offset_bottom = 31.0
 vertical = true
-script = ExtResource("13_7spss")
+script = ExtResource("14_q20oy")
 answer_label_1 = NodePath("Answer1")
 answer_label_2 = NodePath("Answer2")
 answer_label_3 = NodePath("Answer3")
 
 [node name="Answer1" type="RichTextLabel" parent="DialogueBox/AnswersContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("14_41q1i")
+theme_override_fonts/normal_font = ExtResource("10_ekhtl")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
-script = ExtResource("15_1n78k")
+script = ExtResource("15_xeokh")
 
 [node name="Answer2" type="RichTextLabel" parent="DialogueBox/AnswersContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("14_41q1i")
+theme_override_fonts/normal_font = ExtResource("10_ekhtl")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
-script = ExtResource("15_1n78k")
+script = ExtResource("15_xeokh")
 
 [node name="Answer3" type="RichTextLabel" parent="DialogueBox/AnswersContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("14_41q1i")
+theme_override_fonts/normal_font = ExtResource("10_ekhtl")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
-script = ExtResource("15_1n78k")
+script = ExtResource("15_xeokh")
 
 [node name="ScreenShader" type="ColorRect" parent="."]
 visible = false
@@ -373,7 +373,7 @@ offset_right = 385.0
 offset_bottom = 384.0
 mouse_filter = 2
 
-[node name="PressStartText" parent="." instance=ExtResource("14_rtt8b")]
+[node name="PressStartText" parent="." instance=ExtResource("16_ub314")]
 offset_left = 117.0
 offset_top = 81.0
 offset_right = 263.0
@@ -387,3 +387,11 @@ material = SubResource("ShaderMaterial_4efw8")
 offset_right = 388.0
 offset_bottom = 385.0
 color = Color(0, 0, 0, 0)
+
+[node name="DefaultVerticalTimer" type="Timer" parent="."]
+
+[node name="DefaultHorizontalTimer" type="Timer" parent="."]
+
+[node name="MosquitoTimer" type="Timer" parent="."]
+
+[node name="BatTimer" type="Timer" parent="."]
