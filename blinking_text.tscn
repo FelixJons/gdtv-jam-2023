@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ctdbl6sent7"]
+
+[ext_resource type="Script" path="res://blinking_text_script.gd" id="1_glotj"]
+
+[node name="BlinkingText" type="Label"]
+text = "TEST TEXT"
+script = ExtResource("1_glotj")

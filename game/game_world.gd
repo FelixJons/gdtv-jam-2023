@@ -15,7 +15,6 @@ func _ready():
 	enemy_spawner.on_enemies_killed_changed.connect(next_dialogue)
 	get_window().set_content_scale_size(Vector2i(24*16,24*16))
 	
-	
 	# Shader stuff
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_shader_value, 0,150,5)
