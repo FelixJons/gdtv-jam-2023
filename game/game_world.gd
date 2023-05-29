@@ -36,7 +36,7 @@ func set_shader_value(value: int):
 
 func next_dialogue(number):
 	if number in dialogue_kill_count_triggers:
-		pass
+		print("next dialogue")
 	
 func start_dialogue():
 	$TransitionShader.queue_free()
