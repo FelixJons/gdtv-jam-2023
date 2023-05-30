@@ -27,7 +27,8 @@ func set_direction_towards_player():
 	
 
 func get_direction_towards_player():
-	return global_position.direction_to(player.global_position)
+	if player != null:
+		return global_position.direction_to(player.global_position)
 	
 
 signal on_queue_free_custom()

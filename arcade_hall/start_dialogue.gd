@@ -10,7 +10,7 @@ var fade_out_black
 @export var game_scene: PackedScene
 var dialogue_dict: Dictionary
 var answers_dict: Dictionary
-var text_speed: float = 0.02
+var text_speed: float = 0.000002
 var answer_delay: float = 1.0
 var is_loading_dialogue = false
 var current_dialogue_id = "001"
@@ -40,8 +40,6 @@ var input_lock = false
 func _process(delta):
 	if input_lock:
 		return
-	if is_loading_dialogue:
-		return
 	if visible == false:
 		return
 	if not is_loading_dialogue and Input.is_action_just_pressed("item"):
@@ -49,7 +47,17 @@ func _process(delta):
 			display_failed_response()
 		else:
 			dialogue_step()
-
+	if waiting_for_space and Input.is_action_just_pressed("item"):
+		text_box.visible = false
+		answer_box.visible = true
+		waiting_for_space = false  # Reset the flag
+		set_active_char("female_duck")
+		is_waiting_for_answer = true
+		var answers_id = dialogue_dict[current_dialogue_id]["answers"]
+		current_right_answer_id = dialogue_dict[current_dialogue_id]["correct_answer"]
+		var answers_array = get_answer_triples(answers_id)
+		answer_box.set_answers(answers_array)
+		
 func dialogue_step():
 	current_dialogue_id = increment_string_number_by_one(current_dialogue_id)
 	display_dialogue(current_dialogue_id)
@@ -93,18 +101,9 @@ func display_dialogue(dialogue_id: String) -> void:
 		for char in dialogue_text:
 			text_box.add_text(char)
 			await get_tree().create_timer(text_speed).timeout
-		await get_tree().create_timer(answer_delay).timeout
 		
-		set_active_char("female_duck")
-		is_waiting_for_answer = true
-		var answers_id = dialogue_dict[dialogue_id]["answers"]
-		current_right_answer_id = dialogue_dict[dialogue_id]["correct_answer"]
-		
-		var answers_array = get_answer_triples(answers_id)
-		answer_box.set_answers(answers_array)
-		text_box.visible = false
-		answer_box.visible = true
-		
+		#await get_tree().create_timer(answer_delay).timeout
+		waiting_for_space = true
 
 	else:
 		is_loading_dialogue = true
@@ -116,6 +115,8 @@ func display_dialogue(dialogue_id: String) -> void:
 			await get_tree().create_timer(text_speed).timeout
 		is_loading_dialogue = false
 	
+var waiting_for_space = false
+
 func increment_string_number_by_one(s: String) -> String:
 	var number = int(s) # convert the string to int
 	number += 1 # increment the number
