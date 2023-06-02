@@ -1,49 +1,49 @@
 {
 	"001": {
-        "short_text": "1. Sure!",
+		"short_text": "1. Sure!",
 		"text": "That sounds like a challenge! I'd love to give it a try."
 	},
-    "002": {
-        "short_text": "2. Sounds hard...",
-        "text": "I'll try, but don't get your expectations up..."
-    },
-    
-        "003": {
-            "short_text": "1. Call of Duty!",
-            "text": "I love Call of Duty! The thrill of the battlefield and the strategy involved always keeps me on the edge of my seat."
-        },
-        "004": {
-            "short_text": "2. Pokemon Go!",
-            "text": "Pokemon Go is my go-to game! The idea of catching Pokemon in the real world is so exciting and fun."
-        },
-        "005": {
-            "short_text": "3. Stardew Valley!",
-            "text": "Stardew Valley is my favorite! The relaxing pace and the joy of farming and building relationships in the game is so fulfilling."
-        },
-        "006": {
-            "short_text": "1. The Weeknd!",
-            "text": "I love The Weeknd! His unique sound and thought-provoking lyrics always keep me entranced."
-        },
-        "007": {
-            "short_text": "2. Phoebe Bridgers!",
-            "text": "Phoebe Bridgers is my go-to artist! Her emotional storytelling and captivating melodies resonate with me on a deep level."
-        },
-        "008": {
-            "short_text": "3. Drake!",
-            "text": "Drake is my favorite! His diverse range of songs, from high-energy tracks to soulful ballads, always keeps my playlist fresh."
-        },
-        "009": {
-            "short_text": "1. Everywhere Everything All at Once!",
-            "text": "Quack-quack! Everywhere Everything All at Once is like a delightful splash in a vast pond of genres, with ripples of compelling multiverse storytelling that always keeps me paddling for more. "
-        },
-        "010": {
-            "short_text": "2. Fast and Furious: Tokyo Drift!",
-            "text": "Fast and Furious: Tokyo Drift is my go-to movie! The high-octane car races, combined with the thrilling plot, always get my adrenaline pumping."
-        },
-        "011": {
-            "short_text": "3. Titanic!",
-            "text": "Titanic is my favorite! The tragic love story set against the backdrop of a historical disaster never fails to move me."
-        }
-        
-    
+	"002": {
+		"short_text": "2. Sounds hard...",
+		"text": "I'll try, but don't get your expectations up..."
+	},
+	
+		"003": {
+			"short_text": "1. Call of Duty!",
+			"text": "I love Call of Duty! The thrill of the battlefield and the strategy involved always keeps me on the edge of my seat."
+		},
+		"004": {
+			"short_text": "2. Pokemon Go!",
+			"text": "Pokemon Go is my go-to game! The idea of catching Pokemon in the real world is so exciting and fun."
+		},
+		"005": {
+			"short_text": "3. Stardew Valley!",
+			"text": "Stardew Valley is my favorite! The relaxing pace and the joy of farming and building relationships in the game is so fulfilling."
+		},
+		"006": {
+			"short_text": "1. The Weeknd!",
+			"text": "I love The Weeknd! His unique sound and thought-provoking lyrics always keep me entranced."
+		},
+		"007": {
+			"short_text": "2. Phoebe Bridgers!",
+			"text": "Phoebe Bridgers is my go-to artist! Her emotional storytelling and captivating melodies resonate with me on a deep level."
+		},
+		"008": {
+			"short_text": "3. Drake!",
+			"text": "Drake is my favorite! His diverse range of songs, from high-energy tracks to soulful ballads, always keeps my playlist fresh."
+		},
+		"009": {
+			"short_text": "1. Everywhere Everything All at Once!",
+			"text": "Quack-quack! Everywhere Everything All at Once is like a delightful splash in a vast pond of genres, with ripples of compelling multiverse storytelling that always keeps me paddling for more. "
+		},
+		"010": {
+			"short_text": "2. Fast and Furious: Tokyo Drift!",
+			"text": "Fast and Furious: Tokyo Drift is my go-to movie! The high-octane car races, combined with the thrilling plot, always get my adrenaline pumping."
+		},
+		"011": {
+			"short_text": "3. Titanic!",
+			"text": "Titanic is my favorite! The tragic love story set against the backdrop of a historical disaster never fails to move me."
+		}
+		
+	
 }

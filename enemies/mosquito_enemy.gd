@@ -19,8 +19,10 @@ func respawn():
 
 
 func _physics_process(delta):
+	if(player == null):
+		return
 	velocity = direction * speed
-	move_and_slide()
+	move_and_collide(velocity)
 	
 func set_direction_towards_player():
 	direction = get_direction_towards_player()

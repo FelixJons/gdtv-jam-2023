@@ -10,7 +10,7 @@ var fade_out_black
 @export var game_scene: PackedScene
 var dialogue_dict: Dictionary
 var answers_dict: Dictionary
-var text_speed: float = 0.000002
+var text_speed: float = 0.02
 var answer_delay: float = 1.0
 var is_loading_dialogue = false
 var current_dialogue_id = "001"
@@ -91,6 +91,9 @@ func display_dialogue(dialogue_id: String) -> void:
 			dialogue_off_signal.emit()
 			visible = false
 			is_loading_dialogue = false
+		elif dialogue_dict[dialogue_id]["command"] == "win_game":
+				input_lock = true
+				game_over_by_dialogue_signal.emit(true)
 			
 	elif dialogue_dict[dialogue_id]["type"] == "question":
 		is_loading_dialogue = true
@@ -102,7 +105,6 @@ func display_dialogue(dialogue_id: String) -> void:
 			text_box.add_text(char)
 			await get_tree().create_timer(text_speed).timeout
 		
-		#await get_tree().create_timer(answer_delay).timeout
 		waiting_for_space = true
 
 	else:
