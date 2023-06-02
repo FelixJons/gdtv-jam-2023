@@ -42,12 +42,12 @@ func _process(delta):
 		return
 	if visible == false:
 		return
-	if not is_loading_dialogue and Input.is_action_just_pressed("item"):
+	if not is_loading_dialogue and Input.is_action_just_pressed("space"):
 		if game_over_by_dialogue == true:
 			display_failed_response()
 		else:
 			dialogue_step()
-	if waiting_for_space and Input.is_action_just_pressed("item"):
+	if waiting_for_space and Input.is_action_just_pressed("space"):
 		text_box.visible = false
 		answer_box.visible = true
 		waiting_for_space = false  # Reset the flag
