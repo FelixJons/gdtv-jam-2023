@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cery8nlwb4fh"]
+
+[ext_resource type="Script" path="res://arcade_hall/scenes/start_scene.gd" id="1_a52ft"]
+[ext_resource type="Texture2D" uid="uid://d3cruyghx8t2h" path="res://sprites/backgrounds/400x240_background_city.png" id="2_xx587"]
+[ext_resource type="Script" path="res://arcade_hall/scripts/start_camera.gd" id="3_edyod"]
+[ext_resource type="PackedScene" uid="uid://d2ctdbl6sent7" path="res://game/scenes/blinking_text.tscn" id="4_svqcn"]
+
+[node name="StartScene" type="Node2D"]
+script = ExtResource("1_a52ft")
+
+[node name="400x240BackgroundCity" type="Sprite2D" parent="."]
+position = Vector2(200, 120)
+texture = ExtResource("2_xx587")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(200, 120)
+script = ExtResource("3_edyod")
+
+[node name="ZoomInPoint" type="Node2D" parent="Camera2D"]
+position = Vector2(80, 80)
+
+[node name="FadeInBlackShader" type="CanvasModulate" parent="."]
+
+[node name="PressStartText" parent="." instance=ExtResource("4_svqcn")]
+offset_left = 132.0
+offset_top = 16.0
+offset_right = 278.0
+offset_bottom = 41.0
+text = "Press Start"

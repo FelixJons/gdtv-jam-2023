@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c5268qs30tppm"]
 
 [ext_resource type="Script" path="res://player/frog_player.gd" id="1_kh084"]
-[ext_resource type="PackedScene" uid="uid://wdubw62p16x7" path="res://enemies/bullet.tscn" id="2_w82hc"]
+[ext_resource type="PackedScene" uid="uid://wdubw62p16x7" path="res://player/bullet.tscn" id="2_w82hc"]
 [ext_resource type="Texture2D" uid="uid://dc022le5327fp" path="res://sprites/frog/player_walking_animation.png" id="3_8704o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h618r"]

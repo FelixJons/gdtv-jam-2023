@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd228en1sawln"]
 
-[ext_resource type="Script" path="res://game_over_script.gd" id="1_nrmct"]
+[ext_resource type="Script" path="res://game/scripts/game_over_script.gd" id="1_nrmct"]
 [ext_resource type="FontFile" uid="uid://dvfag37de6n4k" path="res://fonts/upheavtt.ttf" id="2_dl0y3"]
-[ext_resource type="PackedScene" uid="uid://d2ctdbl6sent7" path="res://blinking_text.tscn" id="3_7vsn7"]
+[ext_resource type="PackedScene" uid="uid://d2ctdbl6sent7" path="res://game/scenes/blinking_text.tscn" id="3_7vsn7"]
 
 [node name="GameOverScene" type="Sprite2D"]
 script = ExtResource("1_nrmct")

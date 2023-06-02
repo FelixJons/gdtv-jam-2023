@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://fmr5g2onrfkb"]
 
-[ext_resource type="Script" path="res://enemies/bat_enemy.gd" id="1_2g3oy"]
-[ext_resource type="Texture2D" uid="uid://we8qlcg40gch" path="res://sprites/enemies/enemy_bat_animation.png" id="2_js8v4"]
+[ext_resource type="Script" path="res://enemies/scripts/bat_enemy.gd" id="1_21qar"]
+[ext_resource type="Texture2D" uid="uid://we8qlcg40gch" path="res://sprites/enemies/enemy_bat_animation.png" id="2_g22a3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1fb8"]
 size = Vector2(24, 13)
@@ -9,10 +9,10 @@ size = Vector2(24, 13)
 [node name="Bat" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_2g3oy")
+script = ExtResource("1_21qar")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["enemies"]]
-texture = ExtResource("2_js8v4")
+texture = ExtResource("2_g22a3")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
